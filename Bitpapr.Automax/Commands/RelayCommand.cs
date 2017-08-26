@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace Bitpapr.Automax.Commands
 {
+    /// <summary>
+    /// Basic implementation of <see cref="ICommand"/>
+    /// </summary>
     public class RelayCommand : ICommand
     {
         public event EventHandler CanExecuteChanged

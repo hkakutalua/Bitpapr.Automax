@@ -11,6 +11,10 @@ using System.Windows.Media.Imaging;
 
 namespace Bitpapr.Automax.ValueConverters
 {
+    /// <summary>
+    /// Value converter that converts a image source string to
+    /// a BitmapImage that can be used in Image associated controls
+    /// </summary>
     public class SourceToImageConverter : MarkupExtension, IValueConverter
     {
         private static SourceToImageConverter instance;

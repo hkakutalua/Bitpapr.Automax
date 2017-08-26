@@ -13,8 +13,16 @@ namespace Bitpapr.Automax.Services
         EditServicesWindow
     };
 
+    /// <summary>
+    /// Class that view models can use to navigate and
+    /// open windows in a decoupled way
+    /// </summary>
     public class NavigationService
     {
+        /// <summary>
+        /// Open the specified window as modal dialog
+        /// </summary>
+        /// <param name="windowToNavigateTo"></param>
         public void ShowWindowAsModal(WindowType windowToNavigateTo)
         {
             switch (windowToNavigateTo)
