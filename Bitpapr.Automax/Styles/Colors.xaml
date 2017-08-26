@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Bitpapr.Automax">
+    
+    <!-- Colors for background -->
+    <Color x:Key="BackgroundMain">#f0f0f0</Color>
+    <SolidColorBrush x:Key="BackgroundMainBrush" Color="{StaticResource BackgroundMain}" />
+    <Color x:Key="BackgroundDark">#e3e3e3</Color>
+    <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}" />
+    <Color x:Key="BackgroundVeryDark">#cccccc</Color>
+    <SolidColorBrush x:Key="BackgroundVeryDarkBrush" Color="{StaticResource BackgroundVeryDark}" />
+    
+    <!-- Colors for foreground -->
+    <Color x:Key="ForegroundMainColor">#979797</Color>
+    <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMainColor}" />
+    <Color x:Key="ForegroundVeryLightColor">#b6b6b6</Color>
+    <SolidColorBrush x:Key="ForegroundVeryLightBrush" Color="{StaticResource ForegroundVeryLightColor}" />
+
+    <!-- Color for default controls -->
+    <Color x:Key="ControlBorderColor">#b6b6b6</Color>
+    <SolidColorBrush x:Key="ControlBorderBrush" Color="{StaticResource ControlBorderColor}" />
+    
+    <!-- Colors for default buttons -->
+    <Color x:Key="ButtonBackground">#c9c9c9</Color>
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{StaticResource ButtonBackground}" />
+    <Color x:Key="ButtonLightBackground">#f0f0f0</Color>
+    <SolidColorBrush x:Key="ButtonLightBackgroundBrush" Color="{StaticResource ButtonLightBackground}" />
+    <Color x:Key="ButtonMouseOverBackground">#a6a6a6</Color>
+    <SolidColorBrush x:Key="ButtonMouseOverBackgroundBrush" Color="{StaticResource ButtonMouseOverBackground}" />
+    <Color x:Key="ButtonPressedColor">#dddddd</Color>
+    <SolidColorBrush x:Key="ButtonPressedBrush" Color="{StaticResource ButtonPressedColor}" />
+
+
+</ResourceDictionary>
