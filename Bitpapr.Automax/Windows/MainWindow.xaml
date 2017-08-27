@@ -70,16 +70,35 @@
                 <ListView Grid.Row="1" ItemsSource="{Binding LastIssuedInvoices}">
                     <ListView.View>
                         <GridView>
+                            <!-- Invoice Number Column -->
                             <GridViewColumn DisplayMemberBinding="{Binding Number}"
                                     Header="Número"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Customer.FirstName}"
-                                    Header="Primeiro Nome" Width="100" />
-                            <GridViewColumn DisplayMemberBinding="{Binding Customer.LastName}"
-                                    Header="Sobrenome" Width="100" />
-                            <GridViewColumn DisplayMemberBinding="{Binding VehicleToRepair.Manufacturer}"
-                                    Header="Veículo" />
+                            
+                            <!-- Client Name Column -->
+                            <GridViewColumn Header="Cliente">
+                                <GridViewColumn.DisplayMemberBinding>
+                                    <MultiBinding StringFormat="{}{0} {1}">
+                                        <Binding Path="Customer.FirstName" />
+                                        <Binding Path="Customer.LastName" />
+                                    </MultiBinding>
+                                </GridViewColumn.DisplayMemberBinding>
+                            </GridViewColumn>
+                            
+                            <!-- Vehicle Manufacturer & Model Column -->
+                            <GridViewColumn Header="Veículo">
+                                <GridViewColumn.DisplayMemberBinding>
+                                    <MultiBinding StringFormat="{}{0} {1}">
+                                        <Binding Path="VehicleToRepair.Manufacturer" />
+                                        <Binding Path="VehicleToRepair.Model" />
+                                    </MultiBinding>
+                                </GridViewColumn.DisplayMemberBinding>
+                            </GridViewColumn>
+                            
+                            <!-- Vehicle Plate Number -->
                             <GridViewColumn DisplayMemberBinding="{Binding VehicleToRepair.PlateNumber}"
                                     Header="Matrícula" />
+                            
+                            <!-- Invoice Issue Date -->
                             <GridViewColumn DisplayMemberBinding="{Binding InvoiceDate}"
                                     Header="Data de Entrada" />
                         </GridView>
