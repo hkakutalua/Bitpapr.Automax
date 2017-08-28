@@ -15,7 +15,7 @@
         <StackPanel Orientation="Vertical">
 
             <!-- Client informations section -->
-            <GroupBox Header="Cliente" Padding="6" Margin="0 4 0 0"
+            <GroupBox Header="Cliente" Padding="8" Margin="0 4 0 0"
                     BorderBrush="{StaticResource BackgroundVeryDarkBrush}"
                     BorderThickness="2.5">
                 <Grid>
@@ -32,34 +32,29 @@
 
                     <!-- Client first name -->
                     <TextBox Grid.Row="0" Grid.Column="0"
-                             Padding="2"
                              Margin="0 0 8 8"
                              Tag="Primeiro Nome"/>
                     <!-- Client last name-->
                     <TextBox Grid.Row="0" Grid.Column="1"
-                             Padding="2"
                              Margin="0 0 0 8"
                              Tag="Sobrenome"/>
                     <!-- Client phone number-->
                     <TextBox Grid.Row="1" Grid.Column="0"
-                             Padding="2"
                              Grid.ColumnSpan="2"
                              Margin="0 0 0 8"
                              Tag="Número de Telemóvel"/>
                     <!-- Client city -->
                     <TextBox Grid.Row="2" Grid.Column="0"
-                             Padding="2"
                              Margin="0 0 8 0"
                              Tag="Cidade"/>
                     <!-- Client neighboorhood -->
                     <TextBox Grid.Row="2" Grid.Column="1"
-                             Padding="2"
                              Tag="Bairro"/>
                 </Grid>
             </GroupBox>
 
             <!-- Vehicle informations section -->
-            <GroupBox Header="Automóvel" Padding="6" Margin="0 4 0 0"
+            <GroupBox Header="Automóvel" Padding="8" Margin="0 4 0 0"
                     BorderBrush="{StaticResource BackgroundVeryDarkBrush}"
                     BorderThickness="2.5">
                 <Grid>
@@ -76,24 +71,21 @@
 
                     <!-- Vehicle brand -->
                     <TextBox Grid.Row="0" Grid.Column="0"
-                             Padding="2"
                              Margin="0 0 8 8"
                              Tag="Marca"/>
                     <!-- Vehicle model -->
                     <TextBox Grid.Row="0" Grid.Column="1"
-                             Padding="2"
                              Margin="0 0 0 8"
                              Tag="Modelo"/>
                     <!-- Vehicle plate number -->
                     <TextBox Grid.Row="1" Grid.Column="0"
-                             Padding="2"
                              Grid.ColumnSpan="2"
                              Tag="Número da Matrícula"/>
                 </Grid>
             </GroupBox>
 
             <!-- Services to provide section -->
-            <GroupBox Header="Serviços a Prestar" Padding="6"
+            <GroupBox Header="Serviços a Prestar" Padding="8"
                       Margin="0 4 0 0"
                     BorderBrush="{StaticResource BackgroundVeryDarkBrush}"
                     BorderThickness="2.5">
@@ -107,12 +99,13 @@
 
                     <Button Grid.Row="1" Content="Editar Serviços"
                             Margin="0 8 0 0"
-                            HorizontalAlignment="Right"/>
+                            HorizontalAlignment="Right"
+                            Command="{Binding EditServicesCommand}"/>
                 </Grid>
             </GroupBox>
 
             <!-- Payment section -->
-            <GroupBox Header="Pagamento" Padding="6"
+            <GroupBox Header="Pagamento" Padding="8"
                       Margin="0 4 0 8"
                     BorderBrush="{StaticResource BackgroundVeryDarkBrush}"
                     BorderThickness="2.5">

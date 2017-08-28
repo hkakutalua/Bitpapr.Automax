@@ -43,7 +43,7 @@
     <Compile Include="Interfaces\IInvoiceService.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Invoice.cs" />
-    <Compile Include="Model\ServiceToDeliver.cs" />
+    <Compile Include="Model\ServiceToProvide.cs" />
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

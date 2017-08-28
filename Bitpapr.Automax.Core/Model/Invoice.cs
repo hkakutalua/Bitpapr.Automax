@@ -12,7 +12,7 @@ namespace Bitpapr.Automax.Core.Model
         public int Number { get; set; }
         public Customer Customer { get; set; }
         public Vehicle VehicleToRepair { get; set; }
-        public List<ServiceToDeliver> ServicesToDeliver { get; set; }
+        public List<ServiceToProvide> ServicesToProvide { get; set; }
         public DateTime InvoiceDate { get; set; }
     }
 }

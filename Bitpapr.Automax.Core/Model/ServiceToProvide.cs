@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Bitpapr.Automax.Core.Model
 {
-    public class ServiceToDeliver
+    public class ServiceToProvide
     {
         public string Name { get; set; }
         public decimal ChargedPrice { get; set; }
-        public string Notes { get; set; }
+        public string Comments { get; set; }
     }
 }

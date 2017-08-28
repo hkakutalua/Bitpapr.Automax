@@ -66,9 +66,10 @@
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
+    <Compile Include="ViewModels\EventArguments\ArgumentPassingEventArgs.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\BaseWindowViewModel.cs" />
-    <Compile Include="ViewModels\Base\IWindowRequestsBroadcaster.cs" />
+    <Compile Include="ViewModels\EditServicesViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="Windows\Base\BaseWindow.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bitpapr.Automax.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Bitpapr.Automax
     /// <summary>
     /// Interaction logic for EditServicesWindow.xaml
     /// </summary>
-    public partial class EditServicesWindow : Window
+    public partial class EditServicesWindow : BaseWindow<EditServicesViewModel>
     {
         public EditServicesWindow()
         {
