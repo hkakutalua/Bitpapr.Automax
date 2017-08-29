@@ -1,5 +1,6 @@
 ﻿using Bitpapr.Automax.Navigation;
 using Bitpapr.Automax.ViewModels;
+using Bitpapr.Automax.InversionOfControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace Bitpapr.Automax
     /// Base class for all windows that support view models as data context
     /// </summary>
     public class BaseWindow<TViewModel> : BaseWindow
-        where TViewModel : BaseWindowViewModel, new()
+        where TViewModel : BaseWindowViewModel
     {
         private TViewModel _viewModel;
         private object _navigationParameter;
@@ -77,7 +78,7 @@ namespace Bitpapr.Automax
         
         public BaseWindow()
         {
-            ViewModel = new TViewModel();
+            ViewModel = IoC.Resolve<TViewModel>();
             ViewModel.WindowCloseRequested += (s, e) => this.Close();
         }
 

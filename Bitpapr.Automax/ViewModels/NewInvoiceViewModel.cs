@@ -15,7 +15,7 @@ namespace Bitpapr.Automax.ViewModels
 {
     public class NewInvoiceViewModel : BaseWindowViewModel
     {
-        private readonly NavigationService _navigationService;
+        private readonly INavigationService _navigationService;
 
         public decimal TotalCost { get; set; }
 
@@ -24,12 +24,7 @@ namespace Bitpapr.Automax.ViewModels
         public ICommand CancelCommand { get; set; }
         public ICommand EditServicesCommand { get; set; }
 
-        public NewInvoiceViewModel()
-            : this(new NavigationService())
-        {
-        }
-
-        public NewInvoiceViewModel(NavigationService navigationService)
+        public NewInvoiceViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             ServicesToProvide = new ObservableCollection<ServiceToProvide>();

@@ -18,7 +18,7 @@ namespace Bitpapr.Automax.Navigation
     /// Class that view models can use to navigate and open windows
     /// in a decoupled way
     /// </summary>
-    public class NavigationService
+    public class NavigationService : INavigationService
     {
         /// <summary>
         /// Open the specified window as modal and optionally pass arguments to it.

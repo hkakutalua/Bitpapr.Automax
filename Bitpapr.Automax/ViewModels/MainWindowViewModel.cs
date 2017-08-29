@@ -15,15 +15,15 @@ namespace Bitpapr.Automax.ViewModels
 {
     public class MainWindowViewModel : BaseWindowViewModel
     {
-        private readonly NavigationService _navigationService;
-        private readonly InvoiceService _invoiceService;
+        private readonly INavigationService _navigationService;
+        private readonly IInvoiceService _invoiceService;
 
         public ObservableCollection<Invoice> LastIssuedInvoices { get; set; }
 
         public ICommand GetLastInvoicesCommand { get; set; }
         public ICommand NewInvoiceCommand { get; set; }
 
-        public MainWindowViewModel(InvoiceService invoiceService, NavigationService navigationService)
+        public MainWindowViewModel(IInvoiceService invoiceService, INavigationService navigationService)
         {
             _navigationService = navigationService;
             _invoiceService = invoiceService;
@@ -33,11 +33,6 @@ namespace Bitpapr.Automax.ViewModels
             NewInvoiceCommand = new RelayCommand(NewInvoice);
 
             GetLastInvoices();
-        }
-
-        public MainWindowViewModel()
-            : this(new InvoiceService(), new NavigationService())
-        {
         }
 
         private void GetLastInvoices()
