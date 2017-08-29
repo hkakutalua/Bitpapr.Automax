@@ -1,7 +1,10 @@
 ﻿using Bitpapr.Automax.Commands;
+using Bitpapr.Automax.Core.Model;
+using Bitpapr.Automax.Navigation;
 using Bitpapr.Automax.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -16,6 +19,8 @@ namespace Bitpapr.Automax.ViewModels
 
         public decimal TotalCost { get; set; }
 
+        public ObservableCollection<ServiceToProvide> ServicesToProvide { get; set; }
+
         public ICommand CancelCommand { get; set; }
         public ICommand EditServicesCommand { get; set; }
 
@@ -27,6 +32,7 @@ namespace Bitpapr.Automax.ViewModels
         public NewInvoiceViewModel(NavigationService navigationService)
         {
             _navigationService = navigationService;
+            ServicesToProvide = new ObservableCollection<ServiceToProvide>();
             EditServicesCommand = new RelayCommand(OnEditServices);
             CancelCommand = new RelayCommand(() => base.OnWindowCloseRequested());
         }
@@ -35,13 +41,17 @@ namespace Bitpapr.Automax.ViewModels
         {
             _navigationService.ShowWindowAsModalForResult(
                 WindowType.EditServicesWindow,
-                OnEditServicesArgumentPassing);
+                OnEditServicesArgumentPassing,
+                ServicesToProvide);
         }
 
-        private void OnEditServicesArgumentPassing(object sender, ArgumentPassingEventArgs e)
+        private void OnEditServicesArgumentPassing(object sender, ParameterPassingEventArgs e)
         {
-            // TODO: Update services to provide collection
-            Debug.WriteLine($"{sender} {e.Argument}");
+            var services = e.Parameter as ObservableCollection<ServiceToProvide>;
+            if (services == null)
+                return;
+
+            ServicesToProvide = services;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bitpapr.Automax.Navigation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,21 +13,15 @@ namespace Bitpapr.Automax.ViewModels
     public abstract class BaseWindowViewModel : BaseViewModel
     {
         /// <summary>
-        /// Event raised when this view model want to pass arguments
+        /// Event raised when this view model want to pass parameters
         /// to outside entities, such as other view models.
         /// </summary>
-        public event EventHandler<ArgumentPassingEventArgs> ArgumentPassing;
+        public event EventHandler<ParameterPassingEventArgs> ParameterPassing;
 
         /// <summary>
         /// Event raised to notify that we want to close the window
         /// </summary>
         public event EventHandler WindowCloseRequested;
-
-        /// <summary>
-        /// The argument passed by the window that contains
-        /// this view model when navigation is done
-        /// </summary>
-        public object Argument { get; set; }
 
         /// <summary>
         /// Raise <see cref="WindowCloseRequested" event/>
@@ -35,10 +30,10 @@ namespace Bitpapr.Automax.ViewModels
             WindowCloseRequested?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
-        /// Raise <see cref="ArgumentPassing" event/>
+        /// Raise <see cref="ParameterPassing" event/>
         /// </summary>
         /// <param name="args"></param>
-        protected virtual void OnArgumentPassing(ArgumentPassingEventArgs args) =>
-            ArgumentPassing?.Invoke(this, args);
+        protected virtual void OnArgumentPassing(ParameterPassingEventArgs args) =>
+            ParameterPassing?.Invoke(this, args);
     }
 }

@@ -24,11 +24,14 @@
                         Margin="0 0 8 0">
                 <GroupBox Header="Adicionar Serviço" Padding="8">
                     <StackPanel Orientation="Vertical">
-                        <TextBox Tag="Nome do Serviço" Text="{Binding ServiceName}"
+                        <TextBox Tag="Nome do Serviço"
+                                 Text="{Binding ServiceName, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="0 0 0 8"/>
-                        <TextBox Tag="Preço a Cobrar" Text="{Binding ChargedPrice}"
+                        <TextBox Tag="Preço"
+                                 Text="{Binding ChargedPrice, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="0 0 0 8" />
-                        <TextBox Tag="Observações" Text="{Binding Comments}"
+                        <TextBox Tag="Observações"
+                                 Text="{Binding Comments, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="0 0 0 8" />
                         <Button Content="Adicionar"
                                 Command="{Binding AddServiceCommand}"
@@ -42,7 +45,8 @@
                           Padding="8" Margin="0 0 0 8">
                 <StackPanel>
                     <ListView Margin="0 0 0 8" Height="100"
-                              ItemsSource="{Binding ServicesToProvide}">
+                              ItemsSource="{Binding ServicesToProvide}"
+                              SelectedIndex="{Binding CurrentServiceIndex, Mode=TwoWay, FallbackValue=-1}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Nome"
@@ -56,8 +60,10 @@
                     </ListView>
                     <StackPanel Grid.Row="1" Orientation="Horizontal"
                                 HorizontalAlignment="Right">
-                        <Button Content="Remover" Margin="0 0 8 0" />
-                        <Button Content="Limpar" />
+                        <Button Content="Remover" Margin="0 0 8 0"
+                                Command="{Binding RemoveCurrentServiceCommand}"/>
+                        <Button Content="Limpar"
+                                Command="{Binding ClearServicesCommand}" />
                     </StackPanel>
                 </StackPanel>
             </GroupBox>

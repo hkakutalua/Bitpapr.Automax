@@ -95,7 +95,18 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <ListView Grid.Row="0" Height="100" />
+                    <ListView Height="100" ItemsSource="{Binding ServicesToProvide}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Serviço"
+                                                DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Preço"
+                                                DisplayMemberBinding="{Binding ChargedPrice}" />
+                                <GridViewColumn Header="Observações"
+                                                DisplayMemberBinding="{Binding Comments}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
 
                     <Button Grid.Row="1" Content="Editar Serviços"
                             Margin="0 8 0 0"

@@ -1,5 +1,6 @@
 ﻿using Bitpapr.Automax.Commands;
 using Bitpapr.Automax.Core.Model;
+using Bitpapr.Automax.Navigation;
 using Bitpapr.Automax.Services;
 using System;
 using System.Collections.Generic;

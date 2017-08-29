@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Bitpapr.Automax.Services
+namespace Bitpapr.Automax.Navigation
 {
     public enum WindowType
     {
@@ -24,11 +24,11 @@ namespace Bitpapr.Automax.Services
         /// Open the specified window as modal and optionally pass arguments to it.
         /// </summary>
         /// <param name="windowToNavigateTo">The window to show</param>
-        /// <param name="argument">The argument to pass to the windows</param>
-        public void ShowWindowAsModal(WindowType windowToNavigateTo, object argument = null)
+        /// <param name="parameter">The parameter to pass to the windows</param>
+        public void ShowWindowAsModal(WindowType windowToNavigateTo, object parameter = null)
         {
             BaseWindow window = CreateWindow(windowToNavigateTo);
-            window.Argument = argument;
+            window.NavigationParameter = parameter;
             window.ShowDialog();
         }
 
@@ -38,13 +38,13 @@ namespace Bitpapr.Automax.Services
         /// </summary>
         /// <param name="windowToNavigateTo">The window to show</param>
         /// <param name="onArgumentPassing">The delegate called when there are results available</param>
-        /// <param name="argument"></param>
+        /// <param name="parameter">The parameter to pass to the windows</param>
         public void ShowWindowAsModalForResult(WindowType windowToNavigateTo,
-            EventHandler<ArgumentPassingEventArgs> onArgumentPassing, object argument = null)
+            EventHandler<ParameterPassingEventArgs> onArgumentPassing, object parameter = null)
         {
             BaseWindow window = CreateWindow(windowToNavigateTo);
-            window.Argument = argument;
-            window.ArgumentPassing += onArgumentPassing;
+            window.NavigationParameter = parameter;
+            window.ParameterPassing += onArgumentPassing;
             window.ShowDialog();
         }
 

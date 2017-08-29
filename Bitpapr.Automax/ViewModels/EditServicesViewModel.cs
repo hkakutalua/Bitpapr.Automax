@@ -1,5 +1,6 @@
 ﻿using Bitpapr.Automax.Commands;
 using Bitpapr.Automax.Core.Model;
+using Bitpapr.Automax.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,14 +11,17 @@ using System.Windows.Input;
 
 namespace Bitpapr.Automax.ViewModels
 {
-    public class EditServicesViewModel : BaseWindowViewModel
+    public class EditServicesViewModel : BaseWindowViewModel, INavigationAware
     {
         public string ServiceName { get; set; }
         public decimal ChargedPrice { get; set; }
         public string Comments { get; set; }
         public ObservableCollection<ServiceToProvide> ServicesToProvide { get; set; }
+        public int CurrentServiceIndex { get; set; } = -1;
 
         public ICommand AddServiceCommand { get; set; }
+        public ICommand RemoveCurrentServiceCommand { get; set; }
+        public ICommand ClearServicesCommand { get; set; }
         public ICommand ConfirmCommand { get; set; }
         public ICommand CancelCommand { get; set; }
 
@@ -25,12 +29,22 @@ namespace Bitpapr.Automax.ViewModels
         {
             ServicesToProvide = new ObservableCollection<ServiceToProvide>();
 
-            AddServiceCommand = new RelayCommand(OnAddService);
-            ConfirmCommand = new RelayCommand(OnConfirmEdit);
+            AddServiceCommand = new RelayCommand(ExecuteAddService, CanExecuteAddService);
+            RemoveCurrentServiceCommand = new RelayCommand(ExecuteRemoveCurrentService,
+                CanExecuteRemoveCurrentService);
+            ClearServicesCommand = new RelayCommand(() => ServicesToProvide.Clear());
+            ConfirmCommand = new RelayCommand(ExecuteConfirmEdit);
             CancelCommand = new RelayCommand(() => base.OnWindowCloseRequested());
         }
 
-        private void OnAddService()
+        public void NavigatedTo(object parameter)
+        {
+            var services = parameter as ObservableCollection<ServiceToProvide>;
+            if (services != null)
+                ServicesToProvide = services;
+        }
+
+        private void ExecuteAddService()
         {
             var service = new ServiceToProvide
             {
@@ -46,12 +60,20 @@ namespace Bitpapr.Automax.ViewModels
             Comments = string.Empty;
         }
 
-        private void OnConfirmEdit()
+        private bool CanExecuteAddService()
         {
-            var services = new List<ServiceToProvide>();
-            foreach (var service in ServicesToProvide)
-                services.Add(service);
-            base.OnArgumentPassing(new ArgumentPassingEventArgs(services));
+            return !string.IsNullOrWhiteSpace(ServiceName) &&
+                   !(ChargedPrice < 1);
+        }
+
+        private void ExecuteRemoveCurrentService() =>
+            ServicesToProvide.RemoveAt(CurrentServiceIndex);
+
+        private bool CanExecuteRemoveCurrentService() => !(CurrentServiceIndex == -1);
+
+        private void ExecuteConfirmEdit()
+        {
+            base.OnArgumentPassing(new ParameterPassingEventArgs(ServicesToProvide));
             base.OnWindowCloseRequested();
         }
     }
