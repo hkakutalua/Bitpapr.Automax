@@ -1,5 +1,5 @@
-﻿using Bitpapr.Automax.Navigation;
-using Bitpapr.Automax.Services;
+﻿using Bitpapr.Automax.Core.Services;
+using Bitpapr.Automax.Navigation;
 using Bitpapr.Automax.ViewModels;
 using Microsoft.Practices.Unity;
 using System;
@@ -23,7 +23,7 @@ namespace Bitpapr.Automax.InversionOfControl
         static IoC()
         {
             container.RegisterType<INavigationService, NavigationService>();
-            container.RegisterType<IInvoiceService, InvoiceService>();
+            container.RegisterType<IInvoiceService, FakeInvoiceService>();
 
             container.RegisterType<EditServicesViewModel>();
             container.RegisterType<MainWindowViewModel>();

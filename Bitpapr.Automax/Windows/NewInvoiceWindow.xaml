@@ -32,24 +32,24 @@
 
                     <!-- Client first name -->
                     <TextBox Grid.Row="0" Grid.Column="0"
-                             Margin="0 0 8 8"
+                             Margin="0 0 8 8" Text="{Binding Customer.FirstName}"
                              Tag="Primeiro Nome"/>
                     <!-- Client last name-->
                     <TextBox Grid.Row="0" Grid.Column="1"
-                             Margin="0 0 0 8"
+                             Margin="0 0 0 8" Text="{Binding Customer.LastName}"
                              Tag="Sobrenome"/>
                     <!-- Client phone number-->
                     <TextBox Grid.Row="1" Grid.Column="0"
                              Grid.ColumnSpan="2"
-                             Margin="0 0 0 8"
+                             Margin="0 0 0 8" Text="{Binding Customer.PhoneNumber}"
                              Tag="Número de Telemóvel"/>
                     <!-- Client city -->
                     <TextBox Grid.Row="2" Grid.Column="0"
-                             Margin="0 0 8 0"
+                             Margin="0 0 8 0" Text="{Binding Customer.City}"
                              Tag="Cidade"/>
                     <!-- Client neighboorhood -->
                     <TextBox Grid.Row="2" Grid.Column="1"
-                             Tag="Bairro"/>
+                             Tag="Bairro" Text="{Binding Customer.Neighborhood}"/>
                 </Grid>
             </GroupBox>
 
@@ -71,15 +71,15 @@
 
                     <!-- Vehicle brand -->
                     <TextBox Grid.Row="0" Grid.Column="0"
-                             Margin="0 0 8 8"
+                             Margin="0 0 8 8" Text="{Binding VehicleToRepair.Manufacturer}"
                              Tag="Marca"/>
                     <!-- Vehicle model -->
                     <TextBox Grid.Row="0" Grid.Column="1"
-                             Margin="0 0 0 8"
+                             Margin="0 0 0 8" Text="{Binding VehicleToRepair.Model}"
                              Tag="Modelo"/>
                     <!-- Vehicle plate number -->
                     <TextBox Grid.Row="1" Grid.Column="0"
-                             Grid.ColumnSpan="2"
+                             Grid.ColumnSpan="2" Text="{Binding VehicleToRepair.PlateNumber}"
                              Tag="Número da Matrícula"/>
                 </Grid>
             </GroupBox>
@@ -129,7 +129,8 @@
             <!-- Confirm and Cancel Buttons -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
-                <Button Content="Confirmar" Margin="0 0 8 0" />
+                <Button Content="Confirmar" Margin="0 0 8 0"
+                        Command="{Binding ConfirmCommand}"/>
                 <Button Content="Cancelar"
                         Command="{Binding CancelCommand}"/>
             </StackPanel>

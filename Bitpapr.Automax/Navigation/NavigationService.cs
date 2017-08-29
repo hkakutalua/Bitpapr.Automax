@@ -14,6 +14,12 @@ namespace Bitpapr.Automax.Navigation
         EditServicesWindow
     };
 
+    public enum WindowResult
+    {
+        Success,
+        Cancelled
+    };
+
     /// <summary>
     /// Class that view models can use to navigate and open windows
     /// in a decoupled way

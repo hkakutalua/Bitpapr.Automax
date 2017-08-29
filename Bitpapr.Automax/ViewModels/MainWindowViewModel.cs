@@ -1,14 +1,8 @@
 ﻿using Bitpapr.Automax.Commands;
 using Bitpapr.Automax.Core.Model;
+using Bitpapr.Automax.Core.Services;
 using Bitpapr.Automax.Navigation;
-using Bitpapr.Automax.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Bitpapr.Automax.ViewModels
@@ -37,7 +31,7 @@ namespace Bitpapr.Automax.ViewModels
 
         private void GetLastInvoices()
         {
-            var invoices = _invoiceService.GetLastIssuedInvoices(10);
+            var invoices = _invoiceService.GetLastIssuedInvoices(50);
 
             LastIssuedInvoices.Clear();
             foreach (Invoice invoice in invoices)
@@ -46,6 +40,17 @@ namespace Bitpapr.Automax.ViewModels
             }
         }
 
-        private void NewInvoice() => _navigationService.ShowWindowAsModal(WindowType.NewInvoiceWindow);
+        private void NewInvoice()
+        {
+            _navigationService.ShowWindowAsModalForResult(
+                WindowType.NewInvoiceWindow, (s, e) =>
+                {
+                    if (e.Parameter is WindowResult)
+                    {
+                        if (((WindowResult)e.Parameter) == WindowResult.Success)
+                            GetLastInvoices();
+                    }
+                });
+        }
     }
 }

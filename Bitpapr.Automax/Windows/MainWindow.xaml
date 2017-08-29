@@ -10,7 +10,8 @@
         Title="MainWindow"
         Height="400" Width="600"
         MinHeight="400" MinWidth="600"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid Background="{StaticResource BackgroundMainBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

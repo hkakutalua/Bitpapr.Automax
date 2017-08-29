@@ -78,7 +78,6 @@
     <Compile Include="InversionOfControl\IoC.cs" />
     <Compile Include="Navigation\Base\INavigationAware.cs" />
     <Compile Include="Navigation\Base\INavigationService.cs" />
-    <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />

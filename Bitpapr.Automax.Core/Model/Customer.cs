@@ -13,6 +13,6 @@ namespace Bitpapr.Automax.Core.Model
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string City { get; set; }
-        public string Neighboorhood { get; set; }
+        public string Neighborhood { get; set; }
     }
 }

@@ -46,6 +46,9 @@
     <Compile Include="Model\ServiceToProvide.cs" />
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FakeInvoiceNumberService.cs" />
+    <Compile Include="Services\FakeInvoiceService.cs" />
+    <Compile Include="Interfaces\IInvoiceNumberService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

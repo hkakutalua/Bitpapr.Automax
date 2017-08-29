@@ -41,7 +41,11 @@ namespace Bitpapr.Automax.ViewModels
         {
             var services = parameter as ObservableCollection<ServiceToProvide>;
             if (services != null)
-                ServicesToProvide = services;
+            {
+                ServicesToProvide.Clear();
+                foreach (var service in services)
+                    ServicesToProvide.Add(service);
+            }
         }
 
         private void ExecuteAddService()

@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
 using Bitpapr.Automax.Core.Model;
+using System;
 
-namespace Bitpapr.Automax.Services
+namespace Bitpapr.Automax.Core.Services
 {
     public interface IInvoiceService
     {
+        Invoice GetById(Guid id);
         Invoice GetByNumber(int number);
-        IEnumerable<Invoice> GetLastIssuedInvoices(int maximumInvoicesToRetrieve);
+        IEnumerable<Invoice> GetLastIssuedInvoices(int maximumToRetrieve);
+        void AddNew(Customer customer, Vehicle vehicle,
+            List<ServiceToProvide> servicesToProvide);
+        void CancelInvoice(Guid id);
     }
 }
