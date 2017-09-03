@@ -11,7 +11,8 @@ namespace Bitpapr.Automax.Navigation
     public enum WindowType
     {
         NewInvoiceWindow,
-        EditServicesWindow
+        EditServicesWindow,
+        ReportViewerWindow
     };
 
     public enum WindowResult
@@ -63,6 +64,9 @@ namespace Bitpapr.Automax.Navigation
 
                 case WindowType.EditServicesWindow:
                     return new EditServicesWindow();
+
+                case WindowType.ReportViewerWindow:
+                    return new ReportViewerWindow();
 
                 default:
                     throw new ArgumentException("The WindowType passed is invalid",

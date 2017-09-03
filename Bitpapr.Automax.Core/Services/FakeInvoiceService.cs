@@ -53,6 +53,10 @@ namespace Bitpapr.Automax.Core.Services
         public Invoice GetByNumber(int number) =>
             _invoices.FirstOrDefault(i => i.Number == number);
 
+        public Invoice GetLastIssuedInvoice() =>
+            _invoices.FirstOrDefault(
+                i => i.Number == _invoices.Max(invoice => invoice.Number));
+
         public IEnumerable<Invoice> GetLastIssuedInvoices(int maximumToRetrieve) =>
             _invoices.Take(maximumToRetrieve);
 

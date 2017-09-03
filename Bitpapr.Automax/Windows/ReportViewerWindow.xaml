@@ -1,0 +1,25 @@
+﻿<local:BaseWindow x:TypeArguments="ViewModels:ReportViewerViewModel"
+        x:Class="Bitpapr.Automax.ReportViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:ViewModels="clr-namespace:Bitpapr.Automax.ViewModels"
+        xmlns:Properties="clr-namespace:Bitpapr.Automax.AttachedProperties"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bitpapr.Automax"
+        xmlns:syncfusion="clr-namespace:Syncfusion.Windows.Reports.Viewer;assembly=Syncfusion.ReportViewer.Wpf"
+        mc:Ignorable="d"
+        Title="ReportViewerWindow" Height="300" Width="600"
+        WindowState="Maximized">
+    <Grid>
+        <syncfusion:ReportViewer x:Name="ReportViewer"
+                                 ProcessingMode="Local"
+                                 ShowParameterButton="False"
+                                 ShowParametersBlock="False"
+                                 Properties:ReportViewerProperties.ReportSource="{Binding ReportData.ReportLocation}"
+                                 Properties:ReportViewerProperties.DataSourceName="{Binding ReportData.DataSourceName}"
+                                 Properties:ReportViewerProperties.DataSourceValue="{Binding ReportData.DataSourceValue}"
+                                 Properties:ReportViewerProperties.ReportParameters="{Binding ReportData.ReportParameters}"
+                                 />
+    </Grid>
+</local:BaseWindow>

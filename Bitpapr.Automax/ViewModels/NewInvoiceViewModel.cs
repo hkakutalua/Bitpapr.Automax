@@ -55,6 +55,17 @@ namespace Bitpapr.Automax.ViewModels
             _invoiceService.AddNew(Customer, VehicleToRepair,
                 ServicesToProvide.ToList());
 
+            Invoice lastIssuedInvoice = _invoiceService.GetLastIssuedInvoice();
+            var reportData = new ReportData
+            {
+                ReportLocation  = "/Reports/InvoiceReport.rdlc",
+                DataSourceName  = "ServicesToProvide",
+                DataSourceValue = lastIssuedInvoice.ServicesToProvide,
+                ReportParameters = RetrieveReportParameters(lastIssuedInvoice)
+            };
+
+            _navigationService.ShowWindowAsModal(WindowType.ReportViewerWindow, reportData);
+
             base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Success));
             base.OnWindowCloseRequested();
         }
@@ -79,6 +90,22 @@ namespace Bitpapr.Automax.ViewModels
                 return;
 
             ServicesToProvide = services;
+        }
+
+        private Dictionary<string, object> RetrieveReportParameters(Invoice invoice)
+        {
+            var dictionary = new Dictionary<string, object>();
+
+            dictionary.Add("InvoiceNumber", invoice.Number);
+            dictionary.Add("CustomerName", $"{invoice.Customer.FirstName} {invoice.Customer.LastName}");
+            dictionary.Add("CustomerPhone", invoice.Customer.PhoneNumber);
+            dictionary.Add("CustomerNeighborhood", invoice.Customer.Neighborhood);
+            dictionary.Add("CustomerCity", invoice.Customer.City);
+            dictionary.Add("VehicleBrand", invoice.VehicleToRepair.Manufacturer);
+            dictionary.Add("VehicleModel", invoice.VehicleToRepair.Model);
+            dictionary.Add("VehiclePlate", invoice.VehicleToRepair.PlateNumber);
+
+            return dictionary;
         }
     }
 }
