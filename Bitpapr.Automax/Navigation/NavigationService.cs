@@ -8,19 +8,6 @@ using System.Windows;
 
 namespace Bitpapr.Automax.Navigation
 {
-    public enum WindowType
-    {
-        NewInvoiceWindow,
-        EditServicesWindow,
-        ReportViewerWindow
-    };
-
-    public enum WindowResult
-    {
-        Success,
-        Cancelled
-    };
-
     /// <summary>
     /// Class that view models can use to navigate and open windows
     /// in a decoupled way

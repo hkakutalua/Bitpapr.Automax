@@ -1,4 +1,9 @@
-﻿using Bitpapr.Automax.Core.Services;
+﻿using Bitpapr.Automax.Core.QueryTypes;
+using Bitpapr.Automax.Core.Repositories;
+using Bitpapr.Automax.Core.Services;
+using Bitpapr.Automax.Infrastructure.QueryTypes;
+using Bitpapr.Automax.Infrastructure.Repositories;
+using Bitpapr.Automax.Infrastructure.Services;
 using Bitpapr.Automax.Navigation;
 using Bitpapr.Automax.ViewModels;
 using Microsoft.Practices.Unity;
@@ -23,7 +28,13 @@ namespace Bitpapr.Automax.InversionOfControl
         static IoC()
         {
             container.RegisterType<INavigationService, NavigationService>();
+            container.RegisterType<IDialogService, DialogService>();
+            container.RegisterType<ILoginService, LoginService>(new ContainerControlledLifetimeManager());
             container.RegisterType<IInvoiceService, FakeInvoiceService>();
+            container.RegisterType<IEmployeeRepository, FakeEmployeeRepository>();
+            container.RegisterType<IInvoiceRepository, FakeInvoiceRepository>();
+            container.RegisterType<IQueryLastInvoices, FakeQueryLastInvoices>();
+            container.RegisterType<IInvoiceNumberService, FakeInvoiceNumberService>();
 
             container.RegisterType<EditServicesViewModel>();
             container.RegisterType<MainWindowViewModel>();

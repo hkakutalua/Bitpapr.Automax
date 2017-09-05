@@ -16,6 +16,10 @@ namespace Bitpapr.Automax.AttachedProperties
     {
         #region ReportSource Property
 
+        /// <summary>
+        /// ReportSource attached property for defining the uri of the report
+        /// used by the <see cref="ReportViewer"/>
+        /// </summary>
         public static readonly DependencyProperty ReportSourceProperty =
             DependencyProperty.RegisterAttached("ReportSource",
                 typeof(string),
@@ -32,6 +36,10 @@ namespace Bitpapr.Automax.AttachedProperties
 
         #region DataSourceName Property
 
+        /// <summary>
+        /// DataSourceName attached property to define the name of the data source
+        /// used by the <see cref="ReportViewer"/>
+        /// </summary>
         public static readonly DependencyProperty DataSourceNameProperty =
             DependencyProperty.RegisterAttached("DataSourceName",
                 typeof(string),
@@ -47,6 +55,9 @@ namespace Bitpapr.Automax.AttachedProperties
 
         #region DataSourceValue Property
 
+        /// <summary>
+        /// Attached property holding the data source value
+        /// </summary>
         public static readonly DependencyProperty DataSourceValueProperty =
             DependencyProperty.RegisterAttached("DataSourceValue",
                 typeof(object),
@@ -81,9 +92,11 @@ namespace Bitpapr.Automax.AttachedProperties
         {
             if (element is ReportViewer viewer)
             {
+                // Load an report stored as an embedded into a stream
                 Uri reportUri = new Uri((string)e.NewValue, UriKind.Relative);
                 var streamInfo = Application.GetResourceStream(reportUri);
 
+                // Load the viewer with the report
                 viewer.LoadReport(streamInfo.Stream);
                 viewer.RefreshReport();
             }
@@ -106,6 +119,9 @@ namespace Bitpapr.Automax.AttachedProperties
             if (element is ReportViewer viewer)
             {
                 var reportParameters = e.NewValue as Dictionary<string, object>;
+                
+                // Convert parameters dictionary collection into a List
+                // of ReportViewer report parameters and load the viewer with them
                 viewer.SetParameters(
                     reportParameters.Select(kvPair =>
                     new ReportParameter

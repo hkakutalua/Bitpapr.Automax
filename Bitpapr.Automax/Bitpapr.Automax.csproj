@@ -133,14 +133,19 @@
     <Compile Include="AttachedProperties\ReportViewerProperties.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="InversionOfControl\IoC.cs" />
+    <Compile Include="Navigation\DialogService.cs" />
+    <Compile Include="Navigation\Types\DialogType.cs" />
     <Compile Include="Navigation\Base\INavigationAware.cs" />
     <Compile Include="Navigation\Base\INavigationService.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="Navigation\Types\WindowResult.cs" />
+    <Compile Include="Navigation\Types\WindowType.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\BaseWindowViewModel.cs" />
     <Compile Include="ViewModels\EditServicesViewModel.cs" />
     <Compile Include="ViewModels\EventParameters\ParameterPassingEventArgs.cs" />
+    <Compile Include="Navigation\Base\IDialogService.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="ViewModels\ReportViewerViewModel.cs" />
@@ -241,6 +246,10 @@
     <ProjectReference Include="..\Bitpapr.Automax.Core\Bitpapr.Automax.Core.csproj">
       <Project>{df66e3fc-856b-4c55-a898-9e573cd9cb10}</Project>
       <Name>Bitpapr.Automax.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bitpapr.Automax.Infrastructure\Bitpapr.Automax.Infrastructure.csproj">
+      <Project>{d9107c98-e781-4363-870c-a6f19de090b0}</Project>
+      <Name>Bitpapr.Automax.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

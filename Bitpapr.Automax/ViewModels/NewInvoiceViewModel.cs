@@ -1,4 +1,5 @@
 ﻿using Bitpapr.Automax.Commands;
+using Bitpapr.Automax.Core.Exceptions;
 using Bitpapr.Automax.Core.Model;
 using Bitpapr.Automax.Core.Services;
 using Bitpapr.Automax.Navigation;
@@ -17,7 +18,9 @@ namespace Bitpapr.Automax.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IInvoiceService _invoiceService;
+        private readonly IDialogService _dialogService;
 
+        public Employee LoggedInEmployee { get; set; }
         public Customer Customer { get; set; }
         public Vehicle VehicleToRepair { get; set; }
         public decimal TotalCost { get; set; }
@@ -28,9 +31,11 @@ namespace Bitpapr.Automax.ViewModels
         public ICommand CancelCommand { get; set; }
         public ICommand EditServicesCommand { get; set; }
 
-        public NewInvoiceViewModel(IInvoiceService invoiceService, INavigationService navigationService)
+        public NewInvoiceViewModel(IInvoiceService invoiceService, IDialogService dialogService,
+            INavigationService navigationService)
         {
             _invoiceService = invoiceService;
+            _dialogService = dialogService;
             _navigationService = navigationService;
 
             ServicesToProvide = new ObservableCollection<ServiceToProvide>();
@@ -52,22 +57,35 @@ namespace Bitpapr.Automax.ViewModels
 
         private void ExecuteConfirmNewInvoice()
         {
-            _invoiceService.AddNew(Customer, VehicleToRepair,
+            try
+            {
+                _invoiceService.AddNew(Customer, VehicleToRepair,
                 ServicesToProvide.ToList());
 
-            Invoice lastIssuedInvoice = _invoiceService.GetLastIssuedInvoice();
-            var reportData = new ReportData
+                Invoice lastIssuedInvoice = _invoiceService.GetLastIssuedInvoice();
+                var reportData = new ReportData
+                {
+                    ReportLocation = "/Reports/InvoiceReport.rdlc",
+                    DataSourceName = "ServicesToProvide",
+                    DataSourceValue = lastIssuedInvoice.ServicesToProvide,
+                    ReportParameters = RetrieveReportParameters(lastIssuedInvoice)
+                };
+
+                _navigationService.ShowWindowAsModal(WindowType.ReportViewerWindow, reportData);
+                base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Success));
+            }
+            catch (ServiceException exception)
             {
-                ReportLocation  = "/Reports/InvoiceReport.rdlc",
-                DataSourceName  = "ServicesToProvide",
-                DataSourceValue = lastIssuedInvoice.ServicesToProvide,
-                ReportParameters = RetrieveReportParameters(lastIssuedInvoice)
-            };
-
-            _navigationService.ShowWindowAsModal(WindowType.ReportViewerWindow, reportData);
-
-            base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Success));
-            base.OnWindowCloseRequested();
+                _dialogService.ShowDetailedDialog("Erro!",
+                    "Aconteceu um erro inesperado, por favor contacte/reporte ao desenvolvedor do aplicativo",
+                    $"{exception.Message} \n {exception.InnerException?.Message} \n {exception.StackTrace}",
+                    DialogType.Ok);
+                base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Cancelled));
+            }
+            finally
+            {
+                base.OnWindowCloseRequested();
+            }
         }
 
         private bool CanExecuteConfirmNewInvoice()

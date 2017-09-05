@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Bitpapr.Automax.Core")]
+[assembly: AssemblyTitle("Bitpapr.Automax.Infrastructure")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bitpapr.Automax.Core")]
+[assembly: AssemblyProduct("Bitpapr.Automax.Infrastructure")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("df66e3fc-856b-4c55-a898-9e573cd9cb10")]
+[assembly: Guid("d9107c98-e781-4363-870c-a6f19de090b0")]
 
 // Version information for an assembly consists of the following four values:
 //
