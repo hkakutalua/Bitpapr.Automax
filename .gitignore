@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#Visual studio line ending extension report files
+*.leu
+
 # User-specific files
 *.suo
 *.user
