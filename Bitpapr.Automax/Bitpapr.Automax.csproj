@@ -130,6 +130,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AttachedProperties\Base\BaseAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\PasswordBoxProperties.cs" />
     <Compile Include="AttachedProperties\ReportViewerProperties.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="InversionOfControl\IoC.cs" />
@@ -140,9 +141,12 @@
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Types\WindowResult.cs" />
     <Compile Include="Navigation\Types\WindowType.cs" />
+    <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
+    <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\BaseWindowViewModel.cs" />
+    <Compile Include="ViewModels\Base\IHavePassword.cs" />
     <Compile Include="ViewModels\EditServicesViewModel.cs" />
     <Compile Include="ViewModels\EventParameters\ParameterPassingEventArgs.cs" />
     <Compile Include="Navigation\Base\IDialogService.cs" />
@@ -152,6 +156,9 @@
     <Compile Include="Windows\Base\BaseWindow.cs" />
     <Compile Include="Windows\EditServicesWindow.xaml.cs">
       <DependentUpon>EditServicesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\NewInvoiceWindow.xaml.cs">
       <DependentUpon>NewInvoiceWindow.xaml</DependentUpon>
@@ -172,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EditServicesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

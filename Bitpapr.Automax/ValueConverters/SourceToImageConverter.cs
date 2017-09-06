@@ -15,11 +15,9 @@ namespace Bitpapr.Automax.ValueConverters
     /// Value converter that converts a image source string to
     /// a BitmapImage that can be used in Image associated controls
     /// </summary>
-    public class SourceToImageConverter : MarkupExtension, IValueConverter
+    public class SourceToImageConverter : BaseValueConverter<SourceToImageConverter>
     {
-        private static SourceToImageConverter instance;
-
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
                 return new BitmapImage();
@@ -28,16 +26,9 @@ namespace Bitpapr.Automax.ValueConverters
             return new BitmapImage(sourceUri);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
-        }
-
-        public override object ProvideValue(IServiceProvider serviceProvider)
-        {
-            if (instance == null)
-                instance = new SourceToImageConverter();
-            return instance;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Bitpapr.Automax
         {
             base.OnStartup(e);
 
-            MainWindow = new MainWindow();
+            MainWindow = new LoginWindow();
             MainWindow.Show();
         }
     }
