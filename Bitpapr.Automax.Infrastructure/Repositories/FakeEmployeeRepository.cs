@@ -36,7 +36,9 @@ namespace Bitpapr.Automax.Infrastructure.Repositories
     {
         private static List<Employee> employeeList = new List<Employee>
         {
-            new Employee { Id = Guid.NewGuid(), LoginName = "henrick.pedro", HashedPassword = "", FirstName = "Henrick", LastName = "Pedro", EmployeeRole = EmployeeRole.Administrator },
+            // That HashedPassword is '1234'
+            new Employee { Id = Guid.NewGuid(), LoginName = "henrick.pedro", HashedPassword = "$2y$10$xBrLjjtxGvv/w6lFO1tzuOwS8/emX0IZJd4NZkQ.7wa74gFlgkqGG", FirstName = "Henrick", LastName = "Pedro", EmployeeRole = EmployeeRole.Administrator },
+
             new Employee { Id = Guid.NewGuid(), LoginName = "eulalio.antero", FirstName = "Eulálio", LastName = "Antero", EmployeeRole = EmployeeRole.Manager },
             new Employee { Id = Guid.NewGuid(), LoginName = "nanitamo.pedro", FirstName = "Nanitamo", LastName = "Pedro", EmployeeRole = EmployeeRole.Manager },
             new Employee { Id = Guid.NewGuid(), LoginName = "jorge.dacosta", FirstName = "Jorge", LastName = "DaCosta", EmployeeRole = EmployeeRole.Regular },

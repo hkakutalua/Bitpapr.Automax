@@ -6,14 +6,14 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bitpapr.Automax.Infrastructure.Security
+namespace Bitpapr.Automax.Security
 {
     /// <summary>
-    /// Class for unsecure <see cref="SecureString"/> data
+    /// Helpers for <see cref="SecureString"/> data
     /// </summary>
-    public class SecureStringHandler
+    public static class SecureStringHelper
     {
-        public string Unsecure(SecureString secureString)
+        public static string Unsecure(this SecureString secureString)
         {
             if (secureString == null)
                 return string.Empty;

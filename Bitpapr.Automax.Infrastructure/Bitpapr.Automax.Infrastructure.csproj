@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
-      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    <Reference Include="BCrypt.Net-Next, Version=2.1.1.0, Culture=neutral, PublicKeyToken=748c6c715e2d42e3, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.2.1.1\lib\net452\BCrypt.Net-Next.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -55,7 +55,6 @@
     <Compile Include="QueryTypes\FakeQueryLastInvoices.cs" />
     <Compile Include="Repositories\FakeEmployeeRepository.cs" />
     <Compile Include="Security\PasswordHasher.cs" />
-    <Compile Include="Security\SecureStringHandler.cs" />
     <Compile Include="Services\FakeInvoiceNumberService.cs" />
     <Compile Include="Repositories\FakeInvoiceRepository.cs" />
     <Compile Include="Services\LoginService.cs" />

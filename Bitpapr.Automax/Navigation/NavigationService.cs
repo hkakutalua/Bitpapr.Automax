@@ -14,25 +14,20 @@ namespace Bitpapr.Automax.Navigation
     /// </summary>
     public class NavigationService : INavigationService
     {
-        /// <summary>
-        /// Open the specified window as modal and optionally pass arguments to it.
-        /// </summary>
-        /// <param name="windowToNavigateTo">The window to show</param>
-        /// <param name="parameter">The parameter to pass to the windows</param>
+        public void ShowWindow(WindowType windowToNavigateTo, object parameter = null)
+        {
+            BaseWindow window = CreateWindow(windowToNavigateTo);
+            window.NavigationParameter = parameter;
+            window.Show();
+        }
+        
         public void ShowWindowAsModal(WindowType windowToNavigateTo, object parameter = null)
         {
             BaseWindow window = CreateWindow(windowToNavigateTo);
             window.NavigationParameter = parameter;
             window.ShowDialog();
         }
-
-        /// <summary>
-        /// Open the specified window as modal, and listen for any results from
-        /// the window. Optionally pass arguments to it.
-        /// </summary>
-        /// <param name="windowToNavigateTo">The window to show</param>
-        /// <param name="onArgumentPassing">The delegate called when there are results available</param>
-        /// <param name="parameter">The parameter to pass to the windows</param>
+        
         public void ShowWindowAsModalForResult(WindowType windowToNavigateTo,
             EventHandler<ParameterPassingEventArgs> onArgumentPassing, object parameter = null)
         {
@@ -46,6 +41,12 @@ namespace Bitpapr.Automax.Navigation
         {
             switch (windowType)
             {
+                case WindowType.LoginWindow:
+                    return new LoginWindow();
+
+                case WindowType.MainWindow:
+                    return new MainWindow();
+
                 case WindowType.NewInvoiceWindow:
                     return new NewInvoiceWindow();
 

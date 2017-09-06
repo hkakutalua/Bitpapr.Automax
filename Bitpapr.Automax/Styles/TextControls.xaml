@@ -91,7 +91,7 @@
                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                        Text="{TemplateBinding Tag}"
                                        Foreground="{StaticResource ForegroundVeryLightBrush}"
-                                       Visibility="{TemplateBinding Properties:PasswordBoxProperties.HasText, Converter={Converters:BooleanToVisibilityConverter}}">
+                                       Visibility="{TemplateBinding Properties:PasswordBoxProperties.HasText, Converter={Converters:BooleanToVisibilityConverter}, ConverterParameter=true}">
                             </TextBlock>
                         </Grid>
                     </Border>

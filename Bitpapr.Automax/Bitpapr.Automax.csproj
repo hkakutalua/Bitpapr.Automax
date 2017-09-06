@@ -133,6 +133,7 @@
     <Compile Include="AttachedProperties\PasswordBoxProperties.cs" />
     <Compile Include="AttachedProperties\ReportViewerProperties.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Commands\RelayParameterizedCommand.cs" />
     <Compile Include="InversionOfControl\IoC.cs" />
     <Compile Include="Navigation\DialogService.cs" />
     <Compile Include="Navigation\Types\DialogType.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Types\WindowResult.cs" />
     <Compile Include="Navigation\Types\WindowType.cs" />
+    <Compile Include="Security\SecureStringHandler.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
@@ -150,6 +152,7 @@
     <Compile Include="ViewModels\EditServicesViewModel.cs" />
     <Compile Include="ViewModels\EventParameters\ParameterPassingEventArgs.cs" />
     <Compile Include="Navigation\Base\IDialogService.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="ViewModels\ReportViewerViewModel.cs" />

@@ -12,10 +12,14 @@ namespace Bitpapr.Automax.ValueConverters
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ((bool)value == false)
-                return Visibility.Visible;
+            if ((bool)value == true)
+            {
+                return (parameter == null) ? Visibility.Visible : Visibility.Hidden;
+            }
             else
-                return Visibility.Collapsed;
+            {
+                return (parameter == null) ? Visibility.Hidden : Visibility.Visible;
+            }
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

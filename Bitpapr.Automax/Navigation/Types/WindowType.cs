@@ -2,6 +2,8 @@
 {
     public enum WindowType
     {
+        LoginWindow,
+        MainWindow,
         NewInvoiceWindow,
         EditServicesWindow,
         ReportViewerWindow

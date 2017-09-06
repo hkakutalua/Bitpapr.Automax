@@ -20,19 +20,15 @@ namespace Bitpapr.Automax.Infrastructure.Services
         public bool EmployeeLogged => _employeeLogged;
         public Employee CurrentLoggedEmployee => _currentLoggedEmployee;
 
-        //public bool LoginEmployee(string loginName, SecureString password)
-        //{
-        //    var secureStringHandler = new SecureStringHandler();
-        //    return LoginEmployee(loginName, secureStringHandler.Unsecure(password));
-        //}
-
         public bool LoginEmployee(string loginName, string password)
         {
-            var passwordHasher = new PasswordHasher();
-            string hashedPassword = passwordHasher.HashPassword(password);
+            var hasher = new PasswordHasher();
 
             var employee = FakeEmployeeData.GetData()
-                .FirstOrDefault(e => e.LoginName == loginName && e.HashedPassword == hashedPassword);
+                .FirstOrDefault(e =>
+                    e.LoginName == loginName &&
+                    hasher.VerifyPassword(password, e.HashedPassword));
+
             if (employee != null)
             {
                 LogoutCurrentEmployee();

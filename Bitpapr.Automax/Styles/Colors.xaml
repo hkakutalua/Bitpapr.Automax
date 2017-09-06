@@ -15,6 +15,8 @@
     <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMainColor}" />
     <Color x:Key="ForegroundVeryLightColor">#b6b6b6</Color>
     <SolidColorBrush x:Key="ForegroundVeryLightBrush" Color="{StaticResource ForegroundVeryLightColor}" />
+    <Color x:Key="ForegroundRedColor">#ed3b3b</Color>
+    <SolidColorBrush x:Key="ForegroundRedBrush" Color="{StaticResource ForegroundRedColor}" />
 
     <!-- Color for default controls -->
     <Color x:Key="ControlBorderColor">#b6b6b6</Color>

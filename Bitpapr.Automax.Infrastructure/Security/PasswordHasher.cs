@@ -13,5 +13,10 @@ namespace Bitpapr.Automax.Infrastructure.Security
             var hash = BCrypt.Net.BCrypt.HashPassword(password);
             return string.IsNullOrEmpty(password) ? string.Empty : hash;
         }
+
+        public bool VerifyPassword(string password, string hash)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hash);
+        }
     }
 }

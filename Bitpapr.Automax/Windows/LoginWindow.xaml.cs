@@ -19,7 +19,7 @@ namespace Bitpapr.Automax
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : BaseWindow<NewInvoiceViewModel>, IHavePassword
+    public partial class LoginWindow : BaseWindow<LoginViewModel>, IHavePassword
     {
         public LoginWindow()
         {

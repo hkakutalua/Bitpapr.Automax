@@ -36,14 +36,6 @@ namespace Bitpapr.Automax.Core.Services
 
         public void AddNew(Customer customer, Vehicle vehicle, List<ServiceToProvide> servicesToProvide)
         {
-            // First check if it's there any logged in employee
-            if (_loginService.EmployeeLogged == false)
-            {
-                var exception = new ServiceException("ServiceException",
-                    new NoLoggedUserException("There's no currently logged employee"));
-                throw exception;
-            }
-
             Invoice newInvoice = new Invoice
             {
                 Number = _invoiceNumberService.NextNumber(),

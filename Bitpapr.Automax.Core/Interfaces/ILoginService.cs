@@ -12,7 +12,6 @@ namespace Bitpapr.Automax.Core.Services
     {
         bool EmployeeLogged { get; }
         Employee CurrentLoggedEmployee { get; }
-        //bool LoginEmployee(string loginName, SecureString password);
         bool LoginEmployee(string loginName, string password);
         void LogoutCurrentEmployee();
     }
