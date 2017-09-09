@@ -8,31 +8,30 @@ using System.Windows.Input;
 
 namespace Bitpapr.Automax.ViewModels
 {
-    public class MainWindowViewModel : BaseWindowViewModel
+    public class MainViewModel : BaseWindowViewModel
     {
         private readonly INavigationService _navigationService;
         private readonly ILoginService _loginService;
         private readonly IInvoiceService _invoiceService;
 
+        public int CurrentInvoiceIndex { get; set; } = -1;
         public ObservableCollection<Invoice> LastIssuedInvoices { get; set; }
 
         public ICommand GetLastInvoicesCommand { get; set; }
         public ICommand NewInvoiceCommand { get; set; }
+        public ICommand VisualizeInvoiceCommand { get; set; }
 
-        public MainWindowViewModel(IInvoiceService invoiceService, ILoginService loginService,
+        public MainViewModel(IInvoiceService invoiceService, ILoginService loginService,
             INavigationService navigationService)
         {
             _navigationService = navigationService;
             _loginService = loginService;
             _invoiceService = invoiceService;
 
-            // TODO: move this to an apropriate login window
-            if (!_loginService.LoginEmployee("henrick.pedro", string.Empty))
-                Debug.WriteLine("Login failed");
-
             LastIssuedInvoices = new ObservableCollection<Invoice>();
             GetLastInvoicesCommand = new RelayCommand(GetLastInvoices);
             NewInvoiceCommand = new RelayCommand(NewInvoice);
+            VisualizeInvoiceCommand = new RelayCommand(ExecuteVisualizeInvoice, CanVisualizeInvoice);
 
             GetLastInvoices();
         }
@@ -60,5 +59,13 @@ namespace Bitpapr.Automax.ViewModels
                     }
                 });
         }
+
+        private void ExecuteVisualizeInvoice()
+        {
+            _navigationService.ShowWindowAsModal(WindowType.VisualizeInvoiceWindow,
+                LastIssuedInvoices[CurrentInvoiceIndex]);
+        }
+
+        private bool CanVisualizeInvoice() => !(CurrentInvoiceIndex == -1);
     }
 }

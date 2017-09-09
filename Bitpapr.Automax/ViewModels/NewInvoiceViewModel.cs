@@ -3,6 +3,7 @@ using Bitpapr.Automax.Core.Exceptions;
 using Bitpapr.Automax.Core.Model;
 using Bitpapr.Automax.Core.Services;
 using Bitpapr.Automax.Navigation;
+using Bitpapr.Automax.Reports.ParamsMappers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +19,7 @@ namespace Bitpapr.Automax.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IInvoiceService _invoiceService;
+        private readonly IInvoiceToReportParamsMapper _invoiceToReportParamsMapper;
         private readonly IDialogService _dialogService;
 
         public Employee LoggedInEmployee { get; set; }
@@ -31,10 +33,11 @@ namespace Bitpapr.Automax.ViewModels
         public ICommand CancelCommand { get; set; }
         public ICommand EditServicesCommand { get; set; }
 
-        public NewInvoiceViewModel(IInvoiceService invoiceService, IDialogService dialogService,
-            INavigationService navigationService)
+        public NewInvoiceViewModel(IInvoiceService invoiceService, IInvoiceToReportParamsMapper invoiceToReportParamsMapper,
+            IDialogService dialogService, INavigationService navigationService)
         {
             _invoiceService = invoiceService;
+            _invoiceToReportParamsMapper = invoiceToReportParamsMapper;
             _dialogService = dialogService;
             _navigationService = navigationService;
 
@@ -63,12 +66,14 @@ namespace Bitpapr.Automax.ViewModels
                 ServicesToProvide.ToList());
 
                 Invoice lastIssuedInvoice = _invoiceService.GetLastIssuedInvoice();
+                var reportParams = _invoiceToReportParamsMapper.Map(lastIssuedInvoice);
+
                 var reportData = new ReportData
                 {
                     ReportLocation = "/Reports/InvoiceReport.rdlc",
                     DataSourceName = "ServicesToProvide",
                     DataSourceValue = lastIssuedInvoice.ServicesToProvide,
-                    ReportParameters = RetrieveReportParameters(lastIssuedInvoice)
+                    ReportParameters = reportParams
                 };
 
                 _navigationService.ShowWindowAsModal(WindowType.ReportViewerWindow, reportData);
@@ -104,26 +109,11 @@ namespace Bitpapr.Automax.ViewModels
         private void OnEditServicesArgumentPassing(object sender, ParameterPassingEventArgs e)
         {
             var services = e.Parameter as ObservableCollection<ServiceToProvide>;
-            if (services == null)
-                return;
-
             ServicesToProvide = services;
-        }
 
-        private Dictionary<string, object> RetrieveReportParameters(Invoice invoice)
-        {
-            var dictionary = new Dictionary<string, object>();
-
-            dictionary.Add("InvoiceNumber", invoice.Number);
-            dictionary.Add("CustomerName", $"{invoice.Customer.FirstName} {invoice.Customer.LastName}");
-            dictionary.Add("CustomerPhone", invoice.Customer.PhoneNumber);
-            dictionary.Add("CustomerNeighborhood", invoice.Customer.Neighborhood);
-            dictionary.Add("CustomerCity", invoice.Customer.City);
-            dictionary.Add("VehicleBrand", invoice.VehicleToRepair.Manufacturer);
-            dictionary.Add("VehicleModel", invoice.VehicleToRepair.Model);
-            dictionary.Add("VehiclePlate", invoice.VehicleToRepair.PlateNumber);
-
-            return dictionary;
+            TotalCost = 0;
+            foreach (var serviceToProvide in ServicesToProvide)
+                TotalCost += serviceToProvide.ChargedPrice;
         }
     }
 }

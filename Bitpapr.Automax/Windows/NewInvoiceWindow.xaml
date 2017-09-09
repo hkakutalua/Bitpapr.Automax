@@ -130,7 +130,7 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Button Content="Confirmar" Margin="0 0 8 0"
-                        Command="{Binding ConfirmCommand}"/>
+                        Command="{Binding ConfirmCommand}" IsDefault="True"/>
                 <Button Content="Cancelar"
                         Command="{Binding CancelCommand}"/>
             </StackPanel>

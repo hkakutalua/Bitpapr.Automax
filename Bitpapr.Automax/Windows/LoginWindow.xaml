@@ -28,7 +28,8 @@
                 <Button Content="Logar"
                     Padding="16 4 16 4" Margin="0 0 8 0"
                     Command="{Binding LoginCommand}"
-                    CommandParameter="{Binding ElementName=Window}"/>
+                    CommandParameter="{Binding ElementName=Window}"
+                    IsDefault="True" />
                 <Button Content="Sair" Padding="16 4 16 4"
                         Command="{Binding ExitCommand}"/>
             </StackPanel>

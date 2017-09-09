@@ -5,6 +5,7 @@ using Bitpapr.Automax.Infrastructure.QueryTypes;
 using Bitpapr.Automax.Infrastructure.Repositories;
 using Bitpapr.Automax.Infrastructure.Services;
 using Bitpapr.Automax.Navigation;
+using Bitpapr.Automax.Reports.ParamsMappers;
 using Bitpapr.Automax.ViewModels;
 using Microsoft.Practices.Unity;
 using System;
@@ -36,8 +37,10 @@ namespace Bitpapr.Automax.InversionOfControl
             container.RegisterType<IQueryLastInvoices, FakeQueryLastInvoices>();
             container.RegisterType<IInvoiceNumberService, FakeInvoiceNumberService>();
 
+            container.RegisterType<IInvoiceToReportParamsMapper, InvoiceToReportParamsMapper>();
+
             container.RegisterType<EditServicesViewModel>();
-            container.RegisterType<MainWindowViewModel>();
+            container.RegisterType<MainViewModel>();
             container.RegisterType<NewInvoiceViewModel>();
         }
 

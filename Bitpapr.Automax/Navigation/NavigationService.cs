@@ -44,6 +44,9 @@ namespace Bitpapr.Automax.Navigation
                 case WindowType.LoginWindow:
                     return new LoginWindow();
 
+                case WindowType.VisualizeInvoiceWindow:
+                    return new VisualizeInvoiceWindow();
+
                 case WindowType.MainWindow:
                     return new MainWindow();
 

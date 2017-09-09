@@ -142,6 +142,8 @@
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Types\WindowResult.cs" />
     <Compile Include="Navigation\Types\WindowType.cs" />
+    <Compile Include="Reports\ParamsMappers\Base\IInvoiceToReportParamsMapper.cs" />
+    <Compile Include="Reports\ParamsMappers\InvoiceToReportParamsMapper.cs" />
     <Compile Include="Security\SecureStringHandler.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
@@ -153,9 +155,10 @@
     <Compile Include="ViewModels\EventParameters\ParameterPassingEventArgs.cs" />
     <Compile Include="Navigation\Base\IDialogService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="ViewModels\ReportViewerViewModel.cs" />
+    <Compile Include="ViewModels\VisualizeInvoiceViewModel.cs" />
     <Compile Include="Windows\Base\BaseWindow.cs" />
     <Compile Include="Windows\EditServicesWindow.xaml.cs">
       <DependentUpon>EditServicesWindow.xaml</DependentUpon>
@@ -168,6 +171,9 @@
     </Compile>
     <Compile Include="Windows\ReportViewerWindow.xaml.cs">
       <DependentUpon>ReportViewerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\VisualizeInvoiceWindow.xaml.cs">
+      <DependentUpon>VisualizeInvoiceWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\Buttons.xaml">
       <SubType>Designer</SubType>
@@ -210,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ReportViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\VisualizeInvoiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

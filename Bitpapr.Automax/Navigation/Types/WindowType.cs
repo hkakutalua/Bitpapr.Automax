@@ -6,6 +6,7 @@
         MainWindow,
         NewInvoiceWindow,
         EditServicesWindow,
-        ReportViewerWindow
+        ReportViewerWindow,
+        VisualizeInvoiceWindow
     };
 }
