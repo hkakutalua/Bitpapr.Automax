@@ -38,19 +38,19 @@ namespace Bitpapr.Automax.InversionOfControl
             // UI Mapping (Services)
             container.RegisterType<INavigationService, NavigationService>();
             container.RegisterType<IDialogService, DialogService>();
-            container.RegisterType<ILoginService, LoginService>(new ContainerControlledLifetimeManager());
             container.RegisterType<IInvoiceToReportParamsMapper, InvoiceToReportParamsMapper>();
 
             // Core Mapping (Services and Repositories)
-            container.RegisterType<IEmployeeRepository, FakeEmployeeRepository>();
-            container.RegisterType<IInvoiceRepository, FakeInvoiceRepository>();
-            container.RegisterType<IInvoiceService, FakeInvoiceService>();
-            container.RegisterType<IInvoiceNumberService, FakeInvoiceNumberService>();
-            container.RegisterType<IEmployeeService, FakeEmployeeService>();
+            container.RegisterType<ILoginService, EfLoginService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IInvoiceService, InvoiceService>();
+            container.RegisterType<IEmployeeService, EmployeeService>();
+            container.RegisterType<IEmployeeRepository, EfEmployeeRepository>();
+            container.RegisterType<IInvoiceRepository, EfInvoiceRepository>();
+            container.RegisterType<IInvoiceNumberService, EfInvoiceNumberService>();
 
             // Core Mapping (Query Types)
-            container.RegisterType<IQueryLastInvoices, FakeQueryLastInvoices>();
-            container.RegisterType<IQueryEmployeesByRole, FakeQueryEmployeesByRole>();
+            container.RegisterType<IQueryLastInvoices, EfQueryLastInvoices>();
+            container.RegisterType<IQueryEmployeesByRole, EfQueryEmployeesByRole>();
         }
 
         /// <summary>

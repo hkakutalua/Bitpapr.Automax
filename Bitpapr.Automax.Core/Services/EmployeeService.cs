@@ -9,12 +9,12 @@ using Bitpapr.Automax.Core.Repositories;
 
 namespace Bitpapr.Automax.Core.Services
 {
-    public class FakeEmployeeService : IEmployeeService
+    public class EmployeeService : IEmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IQueryEmployeesByRole _queryEmployeesByRole;
 
-        public FakeEmployeeService(IEmployeeRepository employeeRepository, IQueryEmployeesByRole queryEmployeesByRole)
+        public EmployeeService(IEmployeeRepository employeeRepository, IQueryEmployeesByRole queryEmployeesByRole)
         {
             _employeeRepository = employeeRepository;
             _queryEmployeesByRole = queryEmployeesByRole;

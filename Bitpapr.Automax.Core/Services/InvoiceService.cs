@@ -9,14 +9,14 @@ using Bitpapr.Automax.Core.QueryTypes;
 
 namespace Bitpapr.Automax.Core.Services
 {
-    public class FakeInvoiceService : IInvoiceService
+    public class InvoiceService : IInvoiceService
     {
         private readonly IInvoiceRepository _invoiceRepository;
         private readonly IInvoiceNumberService _invoiceNumberService;
         private readonly IQueryLastInvoices _queryLastInvoices;
         private readonly ILoginService _loginService;
 
-        public FakeInvoiceService(IInvoiceRepository invoiceRepository, IInvoiceNumberService invoiceNumberService,
+        public InvoiceService(IInvoiceRepository invoiceRepository, IInvoiceNumberService invoiceNumberService,
             IQueryLastInvoices queryLastInvoices, ILoginService loginService)
         {
             _invoiceRepository = invoiceRepository;
@@ -36,6 +36,11 @@ namespace Bitpapr.Automax.Core.Services
 
         public void AddNew(Customer customer, Vehicle vehicle, List<ServiceToProvide> servicesToProvide)
         {
+            // Add item number for each service
+            int i = 0;
+            foreach (var service in servicesToProvide)
+                service.ItemNumber = ++i;
+
             Invoice newInvoice = new Invoice
             {
                 Number = _invoiceNumberService.NextNumber(),

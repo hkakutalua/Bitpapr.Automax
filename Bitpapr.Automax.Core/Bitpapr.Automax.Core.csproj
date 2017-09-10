@@ -54,10 +54,10 @@
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Exceptions\NoLoggedUserException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\FakeEmployeeService.cs" />
-    <Compile Include="Services\FakeInvoiceService.cs" />
     <Compile Include="Interfaces\IInvoiceNumberService.cs" />
     <Compile Include="Interfaces\IInvoiceRepository.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\InvoiceService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
