@@ -27,6 +27,7 @@ namespace Bitpapr.Automax.Infrastructure.Services
             var employee = FakeEmployeeData.GetData()
                 .FirstOrDefault(e =>
                     e.LoginName == loginName &&
+                    e.Active == true &&
                     hasher.VerifyPassword(password, e.HashedPassword));
 
             if (employee != null)

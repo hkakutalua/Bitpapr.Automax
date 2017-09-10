@@ -27,7 +27,8 @@
                 <Button Margin="0 0 8 0" Style="{StaticResource ImageButton}"
                         MinWidth="100" Height="80"
                         Tag="/Images/manage-users.png"
-                        Content="Gerir Funcionários"/>
+                        Content="Gerir Funcionários"
+                        Command="{Binding VisualizeEmployeesCommand}"/>
 
                 <Button Style="{StaticResource ImageButton}"
                         MinWidth="100" Height="80"

@@ -20,6 +20,7 @@ namespace Bitpapr.Automax.ViewModels
         public ICommand GetLastInvoicesCommand { get; set; }
         public ICommand NewInvoiceCommand { get; set; }
         public ICommand VisualizeInvoiceCommand { get; set; }
+        public ICommand VisualizeEmployeesCommand { get; set; }
 
         public MainViewModel(IInvoiceService invoiceService, ILoginService loginService,
             INavigationService navigationService)
@@ -32,6 +33,7 @@ namespace Bitpapr.Automax.ViewModels
             GetLastInvoicesCommand = new RelayCommand(GetLastInvoices);
             NewInvoiceCommand = new RelayCommand(NewInvoice);
             VisualizeInvoiceCommand = new RelayCommand(ExecuteVisualizeInvoice, CanVisualizeInvoice);
+            VisualizeEmployeesCommand = new RelayCommand(ExecuteVisualizeEmployees, CanVisualizeEmployees);
 
             GetLastInvoices();
         }
@@ -66,6 +68,17 @@ namespace Bitpapr.Automax.ViewModels
                 LastIssuedInvoices[CurrentInvoiceIndex]);
         }
 
+        private void ExecuteVisualizeEmployees()
+        {
+            _navigationService.ShowWindowAsModal(WindowType.ManageEmployeesWindow);
+        }
+
         private bool CanVisualizeInvoice() => !(CurrentInvoiceIndex == -1);
+
+        private bool CanVisualizeEmployees()
+        {
+            EmployeeRole currentEmployeeRole = _loginService.CurrentLoggedEmployee.EmployeeRole;
+            return currentEmployeeRole == EmployeeRole.Administrator;
+        }
     }
 }

@@ -21,5 +21,6 @@ namespace Bitpapr.Automax.Core.Model
         public string LastName { get; set; }
         public string HashedPassword { get; set; }
         public EmployeeRole EmployeeRole { get; set; }
+        public bool Active { get; set; } = true;
     }
 }

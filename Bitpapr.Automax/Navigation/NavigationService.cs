@@ -56,6 +56,9 @@ namespace Bitpapr.Automax.Navigation
                 case WindowType.EditServicesWindow:
                     return new EditServicesWindow();
 
+                case WindowType.ManageEmployeesWindow:
+                    return new ManageEmployeesWindow();
+
                 case WindowType.ReportViewerWindow:
                     return new ReportViewerWindow();
 

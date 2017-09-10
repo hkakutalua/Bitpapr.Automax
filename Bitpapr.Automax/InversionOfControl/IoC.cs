@@ -28,20 +28,29 @@ namespace Bitpapr.Automax.InversionOfControl
         /// </summary>
         static IoC()
         {
-            container.RegisterType<INavigationService, NavigationService>();
-            container.RegisterType<IDialogService, DialogService>();
-            container.RegisterType<ILoginService, LoginService>(new ContainerControlledLifetimeManager());
-            container.RegisterType<IInvoiceService, FakeInvoiceService>();
-            container.RegisterType<IEmployeeRepository, FakeEmployeeRepository>();
-            container.RegisterType<IInvoiceRepository, FakeInvoiceRepository>();
-            container.RegisterType<IQueryLastInvoices, FakeQueryLastInvoices>();
-            container.RegisterType<IInvoiceNumberService, FakeInvoiceNumberService>();
-
-            container.RegisterType<IInvoiceToReportParamsMapper, InvoiceToReportParamsMapper>();
-
+            // UI Mapping (View Models)
             container.RegisterType<EditServicesViewModel>();
             container.RegisterType<MainViewModel>();
             container.RegisterType<NewInvoiceViewModel>();
+            container.RegisterType<LoginViewModel>();
+            container.RegisterType<ManageEmployeesViewModel>();
+
+            // UI Mapping (Services)
+            container.RegisterType<INavigationService, NavigationService>();
+            container.RegisterType<IDialogService, DialogService>();
+            container.RegisterType<ILoginService, LoginService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IInvoiceToReportParamsMapper, InvoiceToReportParamsMapper>();
+
+            // Core Mapping (Services and Repositories)
+            container.RegisterType<IEmployeeRepository, FakeEmployeeRepository>();
+            container.RegisterType<IInvoiceRepository, FakeInvoiceRepository>();
+            container.RegisterType<IInvoiceService, FakeInvoiceService>();
+            container.RegisterType<IInvoiceNumberService, FakeInvoiceNumberService>();
+            container.RegisterType<IEmployeeService, FakeEmployeeService>();
+
+            // Core Mapping (Query Types)
+            container.RegisterType<IQueryLastInvoices, FakeQueryLastInvoices>();
+            container.RegisterType<IQueryEmployeesByRole, FakeQueryEmployeesByRole>();
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace Bitpapr.Automax.Infrastructure.Repositories
         {
             var employees = (List<Employee>)FakeEmployeeData.GetData();
             
-            if (employees.Exists(e => e.Id != employee.Id))
+            if (!employees.Exists(e => e.Id == employee.Id))
             {
                 employees.Add(employee);
             }
@@ -38,9 +38,10 @@ namespace Bitpapr.Automax.Infrastructure.Repositories
         {
             // That HashedPassword is '1234'
             new Employee { Id = Guid.NewGuid(), LoginName = "henrick.pedro", HashedPassword = "$2y$10$xBrLjjtxGvv/w6lFO1tzuOwS8/emX0IZJd4NZkQ.7wa74gFlgkqGG", FirstName = "Henrick", LastName = "Pedro", EmployeeRole = EmployeeRole.Administrator },
-
             new Employee { Id = Guid.NewGuid(), LoginName = "eulalio.antero", FirstName = "Eulálio", LastName = "Antero", EmployeeRole = EmployeeRole.Manager },
-            new Employee { Id = Guid.NewGuid(), LoginName = "nanitamo.pedro", FirstName = "Nanitamo", LastName = "Pedro", EmployeeRole = EmployeeRole.Manager },
+
+            // Password is 'fuzzy'
+            new Employee { Id = Guid.NewGuid(), LoginName = "nanitamo.pedro", HashedPassword = "$2y$10$Pd7/Gjw0PxBY7UwpKahT9OGTn2.9uRhtPVGkI2N02uflaXQdF34NW", FirstName = "Nanitamo", LastName = "Pedro", EmployeeRole = EmployeeRole.Manager },
             new Employee { Id = Guid.NewGuid(), LoginName = "jorge.dacosta", FirstName = "Jorge", LastName = "DaCosta", EmployeeRole = EmployeeRole.Regular },
         };
 

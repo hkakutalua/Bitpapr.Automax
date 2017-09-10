@@ -7,6 +7,7 @@
         NewInvoiceWindow,
         EditServicesWindow,
         ReportViewerWindow,
-        VisualizeInvoiceWindow
+        VisualizeInvoiceWindow,
+        ManageEmployeesWindow
     };
 }

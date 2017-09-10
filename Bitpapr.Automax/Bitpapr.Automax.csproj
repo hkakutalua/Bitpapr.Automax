@@ -145,8 +145,10 @@
     <Compile Include="Reports\ParamsMappers\Base\IInvoiceToReportParamsMapper.cs" />
     <Compile Include="Reports\ParamsMappers\InvoiceToReportParamsMapper.cs" />
     <Compile Include="Security\SecureStringHandler.cs" />
+    <Compile Include="ValueConverters\ActiveToStringConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\RoleToStringConverter.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\BaseWindowViewModel.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="Navigation\Base\IDialogService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ManageEmployeesViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="ViewModels\ReportViewerViewModel.cs" />
     <Compile Include="ViewModels\VisualizeInvoiceViewModel.cs" />
@@ -165,6 +168,9 @@
     </Compile>
     <Compile Include="Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ManageEmployeesWindow.xaml.cs">
+      <DependentUpon>ManageEmployeesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\NewInvoiceWindow.xaml.cs">
       <DependentUpon>NewInvoiceWindow.xaml</DependentUpon>
@@ -208,6 +214,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ManageEmployeesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
