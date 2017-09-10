@@ -15,7 +15,7 @@ namespace Bitpapr.Automax.Infrastructure.Services
         {
             using (var context = new AutomaxContext())
             {
-                int? maxNumber = context.Invoices.Max(i => i.Number);
+                int? maxNumber = context.Invoices.Max(i => (int?)i.Number);
                 return (maxNumber == null) ? 1 : maxNumber.Value + 1;
             }
         }

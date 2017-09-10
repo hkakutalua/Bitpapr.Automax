@@ -67,6 +67,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
                     <!-- Vehicle brand -->
@@ -78,9 +79,13 @@
                              Margin="0 0 0 8" Text="{Binding VehicleToRepair.Model}"
                              Tag="Modelo"/>
                     <!-- Vehicle plate number -->
-                    <TextBox Grid.Row="1" Grid.Column="0"
+                    <TextBox Grid.Row="1" Grid.Column="0" Margin="0 0 0 8"
                              Grid.ColumnSpan="2" Text="{Binding VehicleToRepair.PlateNumber}"
                              Tag="Número da Matrícula"/>
+                    <!-- Vehicle chassis number -->
+                    <TextBox Grid.Row="2" Grid.Column="0"
+                             Grid.ColumnSpan="2" Text="{Binding VehicleToRepair.ChassisNumber}"
+                             Tag="Número do Chassis"/>
                 </Grid>
             </GroupBox>
 

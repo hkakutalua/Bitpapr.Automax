@@ -11,5 +11,6 @@ namespace Bitpapr.Automax.Core.Model
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public string PlateNumber { get; set; }
+        public string ChassisNumber { get; set; }
     }
 }
