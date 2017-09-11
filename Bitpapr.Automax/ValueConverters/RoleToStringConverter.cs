@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Bitpapr.Automax.ValueConverters
 {
+    /// <summary>
+    /// Converts a <see cref="Employee.EmployeeRole"/> to an string value
+    /// </summary>
     public class RoleToStringConverter : BaseValueConverter<RoleToStringConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)

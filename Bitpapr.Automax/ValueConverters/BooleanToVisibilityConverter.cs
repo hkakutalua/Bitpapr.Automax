@@ -8,6 +8,9 @@ using System.Windows;
 
 namespace Bitpapr.Automax.ValueConverters
 {
+    /// <summary>
+    /// Converts a boolean value to a <see cref="Visibility"/> value
+    /// </summary>
     public class BooleanToVisibilityConverter : BaseValueConverter<BooleanToVisibilityConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)

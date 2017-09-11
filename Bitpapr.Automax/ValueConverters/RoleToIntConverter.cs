@@ -1,13 +1,12 @@
 ﻿using Bitpapr.Automax.Core.Model;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bitpapr.Automax.ValueConverters
 {
+    /// <summary>
+    /// Converts a <see cref="Employee.EmployeeRole"/> to an integer value
+    /// </summary>
     public class RoleToIntConverter : BaseValueConverter<RoleToIntConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)

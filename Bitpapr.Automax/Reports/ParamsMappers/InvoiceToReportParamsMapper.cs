@@ -7,6 +7,10 @@ using Bitpapr.Automax.Core.Model;
 
 namespace Bitpapr.Automax.Reports.ParamsMappers
 {
+    /// <summary>
+    /// Class that maps invoice data to a parameter collection ready to
+    /// send to reports
+    /// </summary>
     public class InvoiceToReportParamsMapper : IInvoiceToReportParamsMapper
     {
         public Dictionary<string, object> Map(Invoice invoice)

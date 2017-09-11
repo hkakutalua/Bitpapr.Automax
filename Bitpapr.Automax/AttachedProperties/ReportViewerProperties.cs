@@ -14,8 +14,6 @@ namespace Bitpapr.Automax.AttachedProperties
     /// </summary>
     public class ReportViewerProperties
     {
-        #region ReportSource Property
-
         /// <summary>
         /// ReportSource attached property for defining the uri of the report
         /// used by the <see cref="ReportViewer"/>
@@ -32,10 +30,6 @@ namespace Bitpapr.Automax.AttachedProperties
         public static void SetReportSource(ReportViewer element, string value) =>
             element.SetValue(ReportSourceProperty, value);
 
-        #endregion
-
-        #region DataSourceName Property
-
         /// <summary>
         /// DataSourceName attached property to define the name of the data source
         /// used by the <see cref="ReportViewer"/>
@@ -50,11 +44,7 @@ namespace Bitpapr.Automax.AttachedProperties
 
         public static void SetDataSourceName(ReportViewer element, string value) =>
             element.SetValue(DataSourceNameProperty, value);
-
-        #endregion
-
-        #region DataSourceValue Property
-
+        
         /// <summary>
         /// Attached property holding the data source value
         /// </summary>
@@ -70,10 +60,9 @@ namespace Bitpapr.Automax.AttachedProperties
         public static void SetDataSourceValue(ReportViewer element, object value) =>
             element.SetValue(DataSourceValueProperty, value);
 
-        #endregion
-
-        #region ReportParameters Property
-
+        /// <summary>
+        /// Attached property containg the parameters passed to the report
+        /// </summary>
         public static readonly DependencyProperty ReportParametersProperty =
             DependencyProperty.RegisterAttached("ReportParameters",
                 typeof(Dictionary<string, object>),
@@ -86,8 +75,12 @@ namespace Bitpapr.Automax.AttachedProperties
         public static void SetReportParameters(ReportViewer element, Dictionary<string, object> value) =>
             element.SetValue(ReportParametersProperty, value);
 
-        #endregion
-
+        /// <summary>
+        /// Called when report source file is changed, the new report is loaded
+        /// as an embedded resource
+        /// </summary>
+        /// <param name="element">The <see cref="ReportViewer"/></param>
+        /// <param name="e">Event arguments</param>
         private static void OnReportSourceChanged(DependencyObject element, DependencyPropertyChangedEventArgs e)
         {
             if (element is ReportViewer viewer)
@@ -102,6 +95,11 @@ namespace Bitpapr.Automax.AttachedProperties
             }
         }
 
+        /// <summary>
+        /// Called when the report data source is changed
+        /// </summary>
+        /// <param name="element">The <see cref="ReportViewer"/></param>
+        /// <param name="e">Event arguments</param>
         private static void OnDataSourceValueChanged(DependencyObject element, DependencyPropertyChangedEventArgs e)
         {
             if (element is ReportViewer viewer)
@@ -114,6 +112,14 @@ namespace Bitpapr.Automax.AttachedProperties
             }
         }
 
+        /// <summary>
+        /// Called when the report parameters are changed.
+        /// The parameters are contained in a Dictionary, then this method
+        /// create a collection of <see cref="ReportParameter"/>s mapped from
+        /// the dictionary and load the report with them.
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="e"></param>
         private static void OnReportParametersChanged(DependencyObject element, DependencyPropertyChangedEventArgs e)
         {
             if (element is ReportViewer viewer)
