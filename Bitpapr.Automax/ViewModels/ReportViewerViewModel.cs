@@ -20,7 +20,7 @@ namespace Bitpapr.Automax.ViewModels
     {
         public ReportData ReportData { get; set; }
 
-        public void NavigatedTo(object parameter)
+        public void OnNavigatedTo(object parameter)
         {
             if (ValidReportArgument(parameter as ReportData))
                 ReportData = (ReportData)parameter;

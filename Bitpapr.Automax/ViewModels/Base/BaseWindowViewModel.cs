@@ -1,6 +1,7 @@
 ﻿using Bitpapr.Automax.Navigation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,13 @@ namespace Bitpapr.Automax.ViewModels
         /// Event raised to notify that we want to close the window
         /// </summary>
         public event EventHandler WindowCloseRequested;
+
+        /// <summary>
+        /// Called when the window containing this view model is being closed
+        /// </summary>
+        /// <param name="args">The arguments with a Cancel property to define if the closing
+        ///  will be cancelled</param>
+        public virtual void OnWindowClosing(CancelEventArgs args) { }
 
         /// <summary>
         /// Raise <see cref="WindowCloseRequested" event/>

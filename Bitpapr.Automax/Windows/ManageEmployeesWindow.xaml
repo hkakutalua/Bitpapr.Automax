@@ -8,7 +8,7 @@
         xmlns:ViewModels="clr-namespace:Bitpapr.Automax.ViewModels"
         xmlns:Converters="clr-namespace:Bitpapr.Automax.ValueConverters"
         mc:Ignorable="d"
-        ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         Title="ManageEmployeesWindow" Height="350" Width="450">
     <Border Padding="8">
 

@@ -15,6 +15,6 @@ namespace Bitpapr.Automax.Navigation
         /// Called when a navigation to implementer is done
         /// </summary>
         /// <param name="parameter">The parameter passed when navigating to the implementer</param>
-        void NavigatedTo(object parameter);
+        void OnNavigatedTo(object parameter);
     }
 }

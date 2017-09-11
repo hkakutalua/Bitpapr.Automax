@@ -31,7 +31,7 @@ namespace Bitpapr.Automax.ViewModels
             ExitCommand = new RelayCommand(ExecuteExit);
         }
 
-        public void NavigatedTo(object parameter)
+        public void OnNavigatedTo(object parameter)
         {
             if (parameter is Invoice invoice)
                 Invoice = invoice;

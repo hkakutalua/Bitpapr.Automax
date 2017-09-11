@@ -5,6 +5,7 @@ using Bitpapr.Automax.Navigation;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
+using System.ComponentModel;
 
 namespace Bitpapr.Automax.ViewModels
 {
@@ -36,6 +37,11 @@ namespace Bitpapr.Automax.ViewModels
             VisualizeEmployeesCommand = new RelayCommand(ExecuteVisualizeEmployees, CanVisualizeEmployees);
 
             GetLastInvoices();
+        }
+
+        public override void OnWindowClosing(CancelEventArgs args)
+        {
+            _navigationService.ShowWindow(WindowType.LoginWindow);
         }
 
         private void GetLastInvoices()

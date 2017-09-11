@@ -72,7 +72,7 @@ namespace Bitpapr.Automax
             {
                 _navigationParameter = value;
                 if (_viewModel is INavigationAware)
-                    ((INavigationAware)_viewModel).NavigatedTo(value);
+                    ((INavigationAware)_viewModel).OnNavigatedTo(value);
             }
         }
         
@@ -80,6 +80,8 @@ namespace Bitpapr.Automax
         {
             ViewModel = IoC.Resolve<TViewModel>();
             ViewModel.WindowCloseRequested += (s, e) => this.Close();
+
+            base.Closing += (s, e) => ViewModel.OnWindowClosing(e);
         }
 
         /// <summary>

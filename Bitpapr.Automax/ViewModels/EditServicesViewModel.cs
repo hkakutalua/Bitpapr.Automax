@@ -37,7 +37,7 @@ namespace Bitpapr.Automax.ViewModels
             CancelCommand = new RelayCommand(() => base.OnWindowCloseRequested());
         }
 
-        public void NavigatedTo(object parameter)
+        public void OnNavigatedTo(object parameter)
         {
             var services = parameter as ObservableCollection<ServiceToProvide>;
             if (services != null)
