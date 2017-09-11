@@ -13,26 +13,34 @@
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         SizeToContent="Height"
         Background="{StaticResource BackgroundMainBrush}">
-    <Border Padding="32 64 32 8">
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Login ou senha incorretos"
+    <Border Padding="32 8 32 8">
+        <StackPanel>
+            <TextBlock Margin="0 0 0 8"
+                       FontSize="{StaticResource FontSizeXXLarge}"
+                       HorizontalAlignment="Center">
+                <Run Text="Bitpapr."/><Run Foreground="{StaticResource ForegroundMainBrush}" Text="Automax" />
+            </TextBlock>
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Login ou senha incorretos"
                        Foreground="{StaticResource ForegroundRedBrush}"
                        FontWeight="Bold"
                        Visibility="{Binding IncorrectLoginMessageVisible,
                                             Converter={Converters:BooleanToVisibilityConverter}}"
                        Margin="0 0 0 16" HorizontalAlignment="Center"/>
-            <TextBox Tag="Nome de Login" Text="{Binding LoginName, UpdateSourceTrigger=PropertyChanged}"/>
-            <PasswordBox x:Name="PasswordText" Tag="Senha" Margin="0 8 0 0"
+                <TextBox Tag="Nome de Login" Text="{Binding LoginName, UpdateSourceTrigger=PropertyChanged}"/>
+                <PasswordBox x:Name="PasswordText" Tag="Senha" Margin="0 8 0 0"
                          Properties:PasswordBoxProperties.HasText="{Binding HasPassword, Mode=OneWayToSource}"/>
-            <StackPanel Orientation="Horizontal"  Margin="0 8 0 0"
+                <StackPanel Orientation="Horizontal"  Margin="0 8 0 0"
                         HorizontalAlignment="Right">
-                <Button Content="Logar"
+                    <Button Content="Logar"
                     Padding="16 4 16 4" Margin="0 0 8 0"
                     Command="{Binding LoginCommand}"
                     CommandParameter="{Binding ElementName=Window}"
                     IsDefault="True" />
-                <Button Content="Sair" Padding="16 4 16 4"
+                    <Button Content="Sair" Padding="16 4 16 4"
                         Command="{Binding ExitCommand}"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Border>

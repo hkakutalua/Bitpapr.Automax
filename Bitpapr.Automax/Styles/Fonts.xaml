@@ -12,6 +12,9 @@
     <!-- Font Sizes -->
     <system:Double x:Key="FontSizeRegular">13</system:Double>
     <system:Double x:Key="FontSizeMedium">16</system:Double>
+    <system:Double x:Key="FontSizeLarge">20</system:Double>
+    <system:Double x:Key="FontSizeXLarge">24</system:Double>
+    <system:Double x:Key="FontSizeXXLarge">28</system:Double>
     
     <!-- Apply a default font family for controls -->
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">

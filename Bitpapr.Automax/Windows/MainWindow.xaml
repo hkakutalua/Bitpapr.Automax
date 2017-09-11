@@ -33,7 +33,8 @@
                 <Button Style="{StaticResource ImageButton}"
                         MinWidth="100" Height="80"
                         Tag="/Images/financial-report.png"
-                        Content="Fecho de Caixa"/>
+                        Content="Fecho de Caixa"
+                        IsEnabled="False"/>
             </StackPanel>
         </Border>
 
