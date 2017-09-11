@@ -23,6 +23,7 @@ namespace Bitpapr.Automax.ViewModels
         public ICommand AddEmployeeCommand { get; set; }
         public ICommand ActivateEmployeeCommand { get; set; }
         public ICommand DisableEmployeeCommand { get; set; }
+        public ICommand ExitCommand { get; set; }
 
         public ManageEmployeesViewModel(IEmployeeService employeeService, INavigationService navigationService)
         {
@@ -35,6 +36,7 @@ namespace Bitpapr.Automax.ViewModels
             AddEmployeeCommand = new RelayCommand(ExecuteAddEmployee);
             ActivateEmployeeCommand = new RelayCommand(ExecuteActivateEmployee, CanActivateEmployee);
             DisableEmployeeCommand = new RelayCommand(ExecuteDisableEmployee, CanDisableEmployee);
+            ExitCommand = new RelayCommand(() => base.OnWindowCloseRequested());
         }
 
         private void ExecuteAddEmployee()

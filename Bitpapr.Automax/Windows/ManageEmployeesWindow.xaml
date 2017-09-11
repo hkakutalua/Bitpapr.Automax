@@ -68,7 +68,8 @@
             </GroupBox>
 
             <Button Grid.Row="1" Content="Sair" Margin="0 8 0 0"
-                    HorizontalAlignment="Right" Padding="16 4 16 4"/>
+                    HorizontalAlignment="Right" Padding="16 4 16 4"
+                    Command="{Binding ExitCommand}"/>
 
         </Grid>
 
