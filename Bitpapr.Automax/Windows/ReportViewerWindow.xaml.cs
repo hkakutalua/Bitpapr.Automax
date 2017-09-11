@@ -31,7 +31,7 @@ namespace Bitpapr.Automax
             InitializeComponent();
 
             // Close this window when printing is requested
-            ReportViewer.Print += (s, e) => base.Close();
+            //ReportViewer.Print += (s, e) => base.Close();
         }
     }
 }
