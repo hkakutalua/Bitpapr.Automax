@@ -22,6 +22,8 @@ namespace Bitpapr.Automax.Reports.ParamsMappers
             dictionary.Add("VehicleModel", invoice.VehicleToRepair.Model);
             dictionary.Add("VehiclePlate", invoice.VehicleToRepair.PlateNumber);
             dictionary.Add("VehicleChassis", invoice.VehicleToRepair.ChassisNumber);
+            dictionary.Add("EmployeeName", $"{invoice.Employee.FirstName} {invoice.Employee.LastName}");
+            dictionary.Add("InvoiceDate", invoice.InvoiceDate);
 
             return dictionary;
         }
