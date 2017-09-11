@@ -154,10 +154,11 @@
     <Compile Include="Navigation\Types\WindowType.cs" />
     <Compile Include="Reports\ParamsMappers\Base\IInvoiceToReportParamsMapper.cs" />
     <Compile Include="Reports\ParamsMappers\InvoiceToReportParamsMapper.cs" />
-    <Compile Include="Security\SecureStringHandler.cs" />
+    <Compile Include="Security\SecureStringHelper.cs" />
     <Compile Include="ValueConverters\ActiveToStringConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\RoleToIntConverter.cs" />
     <Compile Include="ValueConverters\RoleToStringConverter.cs" />
     <Compile Include="ValueConverters\SourceToImageConverter.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ManageEmployeesViewModel.cs" />
+    <Compile Include="ViewModels\NewEmployeeViewModel.cs" />
     <Compile Include="ViewModels\NewInvoiceViewModel.cs" />
     <Compile Include="ViewModels\ReportViewerViewModel.cs" />
     <Compile Include="ViewModels\VisualizeInvoiceViewModel.cs" />
@@ -181,6 +183,9 @@
     </Compile>
     <Compile Include="Windows\ManageEmployeesWindow.xaml.cs">
       <DependentUpon>ManageEmployeesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewEmployeeWindow.xaml.cs">
+      <DependentUpon>NewEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\NewInvoiceWindow.xaml.cs">
       <DependentUpon>NewInvoiceWindow.xaml</DependentUpon>
@@ -228,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ManageEmployeesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NewEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,9 +310,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Logo\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="car-with-wrench.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />

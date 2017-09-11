@@ -1,6 +1,7 @@
 ﻿using Bitpapr.Automax.Commands;
 using Bitpapr.Automax.Core.Model;
 using Bitpapr.Automax.Core.Services;
+using Bitpapr.Automax.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,6 +14,7 @@ namespace Bitpapr.Automax.ViewModels
 {
     public class ManageEmployeesViewModel : BaseWindowViewModel
     {
+        private readonly INavigationService _navigationService;
         private readonly IEmployeeService _employeeService;
 
         public int CurrentEmployeeIndex { get; set; } = -1;
@@ -22,8 +24,9 @@ namespace Bitpapr.Automax.ViewModels
         public ICommand ActivateEmployeeCommand { get; set; }
         public ICommand DisableEmployeeCommand { get; set; }
 
-        public ManageEmployeesViewModel(IEmployeeService employeeService)
+        public ManageEmployeesViewModel(IEmployeeService employeeService, INavigationService navigationService)
         {
+            _navigationService = navigationService;
             _employeeService = employeeService;
 
             Employees = new ObservableCollection<Employee>(
@@ -36,7 +39,8 @@ namespace Bitpapr.Automax.ViewModels
 
         private void ExecuteAddEmployee()
         {
-            throw new NotImplementedException();
+            _navigationService.ShowWindowAsModal(WindowType.NewEmployeeWindow);
+            UpdateEmployeeCollection();
         }
 
         private void ExecuteActivateEmployee()

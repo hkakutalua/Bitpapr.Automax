@@ -11,7 +11,8 @@
         mc:Ignorable="d"
         Title="Entrar" Width="300"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
-        SizeToContent="Height">
+        SizeToContent="Height"
+        Background="{StaticResource BackgroundMainBrush}">
     <Border Padding="32 64 32 8">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Login ou senha incorretos"

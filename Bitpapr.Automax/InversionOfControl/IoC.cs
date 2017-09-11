@@ -1,8 +1,10 @@
 ﻿using Bitpapr.Automax.Core.QueryTypes;
 using Bitpapr.Automax.Core.Repositories;
+using Bitpapr.Automax.Core.Security;
 using Bitpapr.Automax.Core.Services;
 using Bitpapr.Automax.Infrastructure.QueryTypes;
 using Bitpapr.Automax.Infrastructure.Repositories;
+using Bitpapr.Automax.Infrastructure.Security;
 using Bitpapr.Automax.Infrastructure.Services;
 using Bitpapr.Automax.Navigation;
 using Bitpapr.Automax.Reports.ParamsMappers;
@@ -47,6 +49,7 @@ namespace Bitpapr.Automax.InversionOfControl
             container.RegisterType<IEmployeeRepository, EfEmployeeRepository>();
             container.RegisterType<IInvoiceRepository, EfInvoiceRepository>();
             container.RegisterType<IInvoiceNumberService, EfInvoiceNumberService>();
+            container.RegisterType<IPasswordHasher, PasswordHasher>();
 
             // Core Mapping (Query Types)
             container.RegisterType<IQueryLastInvoices, EfQueryLastInvoices>();

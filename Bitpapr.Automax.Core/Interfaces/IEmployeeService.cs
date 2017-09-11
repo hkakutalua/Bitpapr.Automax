@@ -10,7 +10,8 @@ namespace Bitpapr.Automax.Core.Services
     public interface IEmployeeService
     {
         IEnumerable<Employee> GetAllRegularsAndManagers();
-        void Insert(Employee employee);
+        void Insert(string loginName, string firstName, string lastName, string password,
+            EmployeeRole role);
         void ActivateEmployee(Guid id);
         void DisableEmployee(Guid id);
     }

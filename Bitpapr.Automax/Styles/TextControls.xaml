@@ -110,5 +110,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!-- Default style for ComboBox -->
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Padding" Value="4" />
+    </Style>
 
 </ResourceDictionary>

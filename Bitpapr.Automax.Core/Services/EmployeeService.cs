@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Bitpapr.Automax.Core.Model;
 using Bitpapr.Automax.Core.QueryTypes;
 using Bitpapr.Automax.Core.Repositories;
+using Bitpapr.Automax.Core.Security;
 
 namespace Bitpapr.Automax.Core.Services
 {
@@ -13,18 +14,34 @@ namespace Bitpapr.Automax.Core.Services
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IQueryEmployeesByRole _queryEmployeesByRole;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public EmployeeService(IEmployeeRepository employeeRepository, IQueryEmployeesByRole queryEmployeesByRole)
+        public EmployeeService(IEmployeeRepository employeeRepository, IQueryEmployeesByRole queryEmployeesByRole,
+            IPasswordHasher passwordHasher)
         {
             _employeeRepository = employeeRepository;
             _queryEmployeesByRole = queryEmployeesByRole;
+            _passwordHasher = passwordHasher;
         }
 
         public IEnumerable<Employee> GetAllRegularsAndManagers() =>
             _queryEmployeesByRole.GetByAllRegularsAndManagers();
 
-        public void Insert(Employee employee) =>
+        public void Insert(string loginName, string firstName, string lastName, string password,
+            EmployeeRole role)
+        {
+            var employee = new Employee
+            {
+                Id = Guid.NewGuid(),
+                FirstName = firstName,
+                LastName = lastName,
+                LoginName = loginName,
+                EmployeeRole = role,
+                HashedPassword = _passwordHasher.HashPassword(password)
+            };
+            
             _employeeRepository.Save(employee);
+        }
 
         public void ActivateEmployee(Guid id)
         {
