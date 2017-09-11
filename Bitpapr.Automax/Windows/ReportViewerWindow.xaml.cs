@@ -29,6 +29,9 @@ namespace Bitpapr.Automax
         public ReportViewerWindow()
         {
             InitializeComponent();
+
+            // Close this window when printing is requested
+            ReportViewer.Print += (s, e) => base.Close();
         }
     }
 }
