@@ -9,7 +9,7 @@
         xmlns:Properties="clr-namespace:Bitpapr.Automax.AttachedProperties"
         xmlns:Converters="clr-namespace:Bitpapr.Automax.ValueConverters"
         mc:Ignorable="d"
-        Title="LoginWindow" Width="300"
+        Title="Entrar" Width="300"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         SizeToContent="Height">
     <Border Padding="32 64 32 8">

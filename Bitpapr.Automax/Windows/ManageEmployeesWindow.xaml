@@ -9,7 +9,7 @@
         xmlns:Converters="clr-namespace:Bitpapr.Automax.ValueConverters"
         mc:Ignorable="d"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
-        Title="ManageEmployeesWindow" Height="350" Width="450">
+        Title="Gerir Funcionários" Height="350" Width="450">
     <Border Padding="8">
 
         <Grid>

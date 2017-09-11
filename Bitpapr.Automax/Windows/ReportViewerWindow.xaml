@@ -9,7 +9,7 @@
         xmlns:local="clr-namespace:Bitpapr.Automax"
         xmlns:syncfusion="clr-namespace:Syncfusion.Windows.Reports.Viewer;assembly=Syncfusion.ReportViewer.Wpf"
         mc:Ignorable="d"
-        Title="ReportViewerWindow" Height="300" Width="600"
+        Title="Pré-visualizar Fatura" Height="300" Width="600"
         WindowState="Maximized">
     <Grid>
         <syncfusion:ReportViewer x:Name="ReportViewer"

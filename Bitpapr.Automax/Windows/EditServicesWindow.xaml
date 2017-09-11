@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Background="{StaticResource BackgroundMainBrush}"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="EditServicesWindow" SizeToContent="Height"
+        Title="Editar Serviços" SizeToContent="Height"
         Width="400">
     <Border Padding="8">
         <Grid>

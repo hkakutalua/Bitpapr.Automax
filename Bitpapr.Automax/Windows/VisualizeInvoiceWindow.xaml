@@ -8,7 +8,7 @@
         xmlns:ViewModels="clr-namespace:Bitpapr.Automax.ViewModels"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" SizeToContent="Height"
-        Title="VisualizeInvoiceWindow" Width="450">
+        Title="Detalhes da Fatura" Width="450">
     <Border Padding="8">
         <StackPanel Orientation="Vertical">
             <GroupBox Header="Informações da Fatura" Padding="8">
