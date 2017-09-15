@@ -439,7 +439,7 @@
             <DataSetName>ServicesToProvide</DataSetName>
             <Top>0.03528cm</Top>
             <Left>3.11891cm</Left>
-            <Height>2.40854cm</Height>
+            <Height>2.40853cm</Height>
             <Width>15.3723cm</Width>
             <Style>
               <Border>
@@ -969,6 +969,8 @@
     </ReportParameter>
     <ReportParameter Name="VehicleChassis">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="EmployeeName">

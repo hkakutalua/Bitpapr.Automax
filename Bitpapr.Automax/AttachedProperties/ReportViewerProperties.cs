@@ -133,7 +133,7 @@ namespace Bitpapr.Automax.AttachedProperties
                     new ReportParameter
                     {
                         Name = kvPair.Key,
-                        Values = new List<string> { kvPair.Value.ToString() }
+                        Values = new List<string> { kvPair.Value?.ToString() }
                     })
                 );
             }
