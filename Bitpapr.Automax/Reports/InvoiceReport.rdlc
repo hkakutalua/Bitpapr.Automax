@@ -45,13 +45,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.49993cm</Width>
+                  <Width>7.04967cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.69535cm</Width>
+                  <Width>4.24509cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.17702cm</Width>
+                  <Width>5.72676cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -438,9 +438,9 @@
             <FixedColumnHeaders>true</FixedColumnHeaders>
             <DataSetName>ServicesToProvide</DataSetName>
             <Top>0.03528cm</Top>
-            <Left>3.11891cm</Left>
+            <Left>2.22308cm</Left>
             <Height>2.40853cm</Height>
-            <Width>15.3723cm</Width>
+            <Width>17.02152cm</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -470,7 +470,7 @@
                       <Value>CLIENTE</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>SemiBold</FontWeight>
                       </Style>
                     </TextRun>
@@ -482,7 +482,7 @@
                     <TextRun>
                       <Value>Cliente: </Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -490,7 +490,7 @@
                     <TextRun>
                       <Value>=Parameters!CustomerName.Value</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -503,7 +503,7 @@
                     <TextRun>
                       <Value>Terminal: </Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -511,7 +511,7 @@
                     <TextRun>
                       <Value>=Parameters!CustomerPhone.Value</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -524,7 +524,7 @@
                     <TextRun>
                       <Value>Morada: </Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -532,7 +532,7 @@
                     <TextRun>
                       <Value>=Parameters!CustomerNeighborhood.Value</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -540,7 +540,7 @@
                     <TextRun>
                       <Value>, </Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -548,7 +548,7 @@
                     <TextRun>
                       <Value>=Parameters!CustomerCity.Value</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -558,15 +558,16 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>CustomerName</rd:DefaultName>
-              <Top>8.81831cm</Top>
-              <Left>3.11891cm</Left>
-              <Height>2.82277cm</Height>
+              <Top>5.77031cm</Top>
+              <Left>10.96349cm</Left>
+              <Height>2.54936cm</Height>
               <Width>8.28111cm</Width>
               <Style>
                 <Border>
-                  <Style>None</Style>
+                  <Style>Solid</Style>
                 </Border>
-                <PaddingLeft>2pt</PaddingLeft>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>8pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
                 <PaddingBottom>2pt</PaddingBottom>
@@ -582,7 +583,7 @@
                       <Value>FATURA Nº </Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>SemiBold</FontWeight>
                       </Style>
                     </TextRun>
@@ -590,7 +591,7 @@
                       <Value>=Parameters!InvoiceNumber.Value</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>SemiBold</FontWeight>
                       </Style>
                     </TextRun>
@@ -602,14 +603,14 @@
                     <TextRun>
                       <Value>Data: </Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Parameters!InvoiceDate.Value</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                       </Style>
                     </TextRun>
@@ -621,14 +622,14 @@
                     <TextRun>
                       <Value>Atendido Por: </Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Parameters!EmployeeName.Value</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                       </Style>
                     </TextRun>
@@ -638,144 +639,16 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>5.77031cm</Top>
-              <Left>3.11891cm</Left>
-              <Height>2.08166cm</Height>
+              <Left>2.22308cm</Left>
+              <Height>2.54936cm</Height>
               <Width>8.74041cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
-                  <Style>None</Style>
+                  <Style>Solid</Style>
                 </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="CustomerName2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>VEÍCULO</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>SemiBold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Marca do Veículo: </Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=Parameters!VehicleBrand.Value</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Modelo: </Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=Parameters!VehicleModel.Value</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Matrícula: </Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=Parameters!VehiclePlate.Value</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Nº do Chassis: </Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=Parameters!VehicleChassis.Value</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>CustomerName</rd:DefaultName>
-              <Top>8.81831cm</Top>
-              <Left>11.57641cm</Left>
-              <Height>3.21964cm</Height>
-              <Width>6.91479cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>8pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
                 <PaddingBottom>2pt</PaddingBottom>
@@ -792,7 +665,7 @@
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>18pt</FontSize>
-                        <FontWeight>ExtraLight</FontWeight>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -814,13 +687,182 @@
               </Paragraphs>
               <rd:DefaultName>Textbox8</rd:DefaultName>
               <Top>2.32377cm</Top>
-              <Left>3.11891cm</Left>
+              <Left>2.22308cm</Left>
               <Height>1.81708cm</Height>
               <Width>10.94354cm</Width>
-              <ZIndex>3</ZIndex>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>MARCA DO VEÍCULO</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!VehicleBrand.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>ExtraLight</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>ExtraLight</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Parameters!VehicleModel.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>ExtraLight</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox7</rd:DefaultName>
+              <Top>9.27217cm</Top>
+              <Left>2.22308cm</Left>
+              <Height>1.41139cm</Height>
+              <Width>17.02152cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox9">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>MATRÍCULA</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!VehiclePlate.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>ExtraLight</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox7</rd:DefaultName>
+              <Top>10.68356cm</Top>
+              <Left>2.22308cm</Left>
+              <Height>1.41139cm</Height>
+              <Width>8.81097cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox10">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Nº DE CHASSIS</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>SemiBold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!VehicleChassis.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>ExtraLight</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox7</rd:DefaultName>
+              <Top>10.68356cm</Top>
+              <Left>11.03405cm</Left>
+              <Height>1.41139cm</Height>
+              <Width>8.21055cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
                 </Border>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
@@ -862,7 +904,7 @@
                     <TextRun>
                       <Value>Banco Atlântico</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -875,7 +917,7 @@
                     <TextRun>
                       <Value>Melkizidek Oliveira</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -888,7 +930,7 @@
                     <TextRun>
                       <Value>IBAN: AO06.0055.0000.6657.6323.10125</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Segoe UI Semilight</FontFamily>
                         <FontSize>12pt</FontSize>
                         <FontWeight>ExtraLight</FontWeight>
                       </Style>
@@ -899,7 +941,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>3.11891cm</Left>
+              <Left>2.22308cm</Left>
               <Height>2.47854cm</Height>
               <Width>7.84458cm</Width>
               <Style>
