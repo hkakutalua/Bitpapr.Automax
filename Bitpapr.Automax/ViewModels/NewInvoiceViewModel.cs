@@ -60,37 +60,24 @@ namespace Bitpapr.Automax.ViewModels
 
         private void ExecuteConfirmNewInvoice()
         {
-            try
-            {
-                _invoiceService.AddNew(Customer, VehicleToRepair,
+            _invoiceService.AddNew(Customer, VehicleToRepair,
                 ServicesToProvide.ToList());
 
-                Invoice lastIssuedInvoice = _invoiceService.GetLastIssuedInvoice();
-                var reportParams = _invoiceToReportParamsMapper.Map(lastIssuedInvoice);
+            Invoice lastIssuedInvoice = _invoiceService.GetLastIssuedInvoice();
+            var reportParams = _invoiceToReportParamsMapper.Map(lastIssuedInvoice);
 
-                var reportData = new ReportData
-                {
-                    ReportLocation = "/Reports/InvoiceReport.rdlc",
-                    DataSourceName = "ServicesToProvide",
-                    DataSourceValue = lastIssuedInvoice.ServicesToProvide,
-                    ReportParameters = reportParams
-                };
+            var reportData = new ReportData
+            {
+                ReportLocation = "/Reports/InvoiceReport.rdlc",
+                DataSourceName = "ServicesToProvide",
+                DataSourceValue = lastIssuedInvoice.ServicesToProvide,
+                ReportParameters = reportParams
+            };
 
-                _navigationService.ShowWindowAsModal(WindowType.ReportViewerWindow, reportData);
-                base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Success));
-            }
-            catch (ServiceException exception)
-            {
-                _dialogService.ShowDetailedDialog("Erro!",
-                    "Aconteceu um erro inesperado, por favor contacte/reporte ao desenvolvedor do aplicativo",
-                    $"{exception.Message} \n {exception.InnerException?.Message} \n {exception.StackTrace}",
-                    DialogType.Ok);
-                base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Cancelled));
-            }
-            finally
-            {
-                base.OnWindowCloseRequested();
-            }
+            _navigationService.ShowWindowAsModal(WindowType.ReportViewerWindow, reportData);
+            base.OnArgumentPassing(new ParameterPassingEventArgs(WindowResult.Success));
+
+            base.OnWindowCloseRequested();
         }
 
         private bool CanExecuteConfirmNewInvoice()
@@ -98,8 +85,8 @@ namespace Bitpapr.Automax.ViewModels
             return !string.IsNullOrWhiteSpace(Customer.FirstName) &&
                 !string.IsNullOrWhiteSpace(Customer.LastName) &&
                 !string.IsNullOrWhiteSpace(Customer.PhoneNumber) &&
-                !string.IsNullOrWhiteSpace(Customer.City) &&
-                !string.IsNullOrWhiteSpace(Customer.Neighborhood) &&
+                !string.IsNullOrWhiteSpace(Customer.Address.City) &&
+                !string.IsNullOrWhiteSpace(Customer.Address.Neighborhood) &&
                 !string.IsNullOrWhiteSpace(VehicleToRepair.Manufacturer) &&
                 !string.IsNullOrWhiteSpace(VehicleToRepair.Model) &&
                 !string.IsNullOrWhiteSpace(VehicleToRepair.PlateNumber) &&

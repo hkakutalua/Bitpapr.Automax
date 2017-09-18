@@ -14,6 +14,7 @@ namespace Bitpapr.Automax.ViewModels
         public string DataSourceName { get; set; }
         public object DataSourceValue { get; set; }
         public Dictionary<string, object> ReportParameters { get; set; }
+            = new Dictionary<string, object>();
     }
 
     public class ReportViewerViewModel : BaseWindowViewModel, INavigationAware

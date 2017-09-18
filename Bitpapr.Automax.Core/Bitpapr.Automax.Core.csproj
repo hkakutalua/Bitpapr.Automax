@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\ILoginService.cs" />
     <Compile Include="Interfaces\IQueryEmployeesByRole.cs" />
     <Compile Include="Interfaces\IQueryLastInvoices.cs" />
+    <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Invoice.cs" />

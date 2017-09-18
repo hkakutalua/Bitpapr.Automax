@@ -73,8 +73,8 @@
                     <TextBlock Grid.Column="1" Grid.Row="5" >
                         <TextBlock.Text>
                             <MultiBinding StringFormat="{}{0}, {1}">
-                                <Binding Path="Invoice.Customer.Neighborhood" />
-                                <Binding Path="Invoice.Customer.City" />
+                                <Binding Path="Invoice.Customer.Address.Neighborhood" />
+                                <Binding Path="Invoice.Customer.Address.City" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>

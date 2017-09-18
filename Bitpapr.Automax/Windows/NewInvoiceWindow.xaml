@@ -45,11 +45,11 @@
                              Tag="Número de Telemóvel"/>
                     <!-- Client city -->
                     <TextBox Grid.Row="2" Grid.Column="0"
-                             Margin="0 0 8 0" Text="{Binding Customer.City}"
+                             Margin="0 0 8 0" Text="{Binding Customer.Address.City}"
                              Tag="Cidade"/>
                     <!-- Client neighboorhood -->
                     <TextBox Grid.Row="2" Grid.Column="1"
-                             Tag="Bairro" Text="{Binding Customer.Neighborhood}"/>
+                             Tag="Bairro" Text="{Binding Customer.Address.Neighborhood}"/>
                 </Grid>
             </GroupBox>
 

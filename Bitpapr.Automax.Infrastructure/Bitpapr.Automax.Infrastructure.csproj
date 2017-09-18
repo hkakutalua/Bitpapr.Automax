@@ -56,17 +56,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryTypes\EfQueryEmployeesByRole.cs" />
     <Compile Include="QueryTypes\EfQueryLastInvoices.cs" />
-    <Compile Include="QueryTypes\FakeQueryEmployeesByRole.cs" />
-    <Compile Include="QueryTypes\FakeQueryLastInvoices.cs" />
     <Compile Include="Repositories\EfEmployeeRepository.cs" />
     <Compile Include="Repositories\EfInvoiceRepository.cs" />
-    <Compile Include="Repositories\FakeEmployeeRepository.cs" />
     <Compile Include="Security\PasswordHasher.cs" />
     <Compile Include="Services\EfInvoiceNumberService.cs" />
     <Compile Include="Services\EfLoginService.cs" />
-    <Compile Include="Services\FakeInvoiceNumberService.cs" />
-    <Compile Include="Repositories\FakeInvoiceRepository.cs" />
-    <Compile Include="Services\LoginService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

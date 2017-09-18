@@ -19,8 +19,10 @@ namespace Bitpapr.Automax.Infrastructure.QueryTypes
                 var invoices = context.Invoices;
 
                 return invoices
+                    .Include(i => i.Customer)
                     .Include(i => i.ServicesToProvide)
                     .Include(i => i.Employee)
+                    .Include(i => i.VehicleToRepair)
                     .FirstOrDefault(i => i.Number == invoices.Max(invoice => invoice.Number));
             }
         }
@@ -32,8 +34,10 @@ namespace Bitpapr.Automax.Infrastructure.QueryTypes
                 return context.Invoices
                     .OrderByDescending(i => i.InvoiceDate)
                     .Take(maxNumberToRetrieve)
+                    .Include(i => i.Customer)
                     .Include(i => i.ServicesToProvide)
                     .Include(i => i.Employee)
+                    .Include(i => i.VehicleToRepair)
                     .ToList();
             }
         }

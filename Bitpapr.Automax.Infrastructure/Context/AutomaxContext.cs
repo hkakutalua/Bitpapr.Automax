@@ -12,6 +12,8 @@ namespace Bitpapr.Automax.Infrastructure
     {
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
 
         public AutomaxContext()
             : base("Automax")

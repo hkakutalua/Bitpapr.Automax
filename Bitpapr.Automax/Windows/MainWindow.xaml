@@ -34,7 +34,7 @@
                         MinWidth="100" Height="80"
                         Tag="/Images/financial-report.png"
                         Content="Fecho de Caixa"
-                        IsEnabled="False"/>
+                        Command="{Binding RunFinancialReportCommand}"/>
             </StackPanel>
         </Border>
 

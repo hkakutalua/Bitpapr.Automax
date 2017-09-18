@@ -43,13 +43,14 @@ namespace Bitpapr.Automax.Core.Services
 
             Invoice newInvoice = new Invoice
             {
-                Number = _invoiceNumberService.NextNumber(),
                 Customer = customer,
                 Employee = _loginService.CurrentLoggedEmployee,
                 VehicleToRepair = vehicle,
                 ServicesToProvide = servicesToProvide,
-                InvoiceDate = DateTime.Now
+                InvoiceDate = DateTime.Now,
             };
+            servicesToProvide.ForEach(s => newInvoice.TotalCharged += s.ChargedPrice);
+
             _invoiceRepository.Save(newInvoice);
         }
     }

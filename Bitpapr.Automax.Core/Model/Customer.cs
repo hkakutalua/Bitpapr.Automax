@@ -8,10 +8,10 @@ namespace Bitpapr.Automax.Core.Model
 {
     public class Customer
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
-        public string City { get; set; }
-        public string Neighborhood { get; set; }
+        public Address Address { get; set; } = new Address();
     }
 }

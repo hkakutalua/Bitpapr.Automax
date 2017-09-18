@@ -23,6 +23,27 @@ namespace Bitpapr.Automax.Infrastructure.Repositories
             }
         }
 
+        public IList<Invoice> GetByEmployeeBetweenDates(Guid employeeId,
+            DateTime startDate, DateTime endDate)
+        {
+            if (startDate >= endDate)
+                throw new ArgumentException(
+                    $"{nameof(startDate)} can't be equal or greater than {nameof(endDate)}",
+                    nameof(startDate));
+
+            using (var context = new AutomaxContext())
+            {
+                return context.Invoices
+                    .Where(i => i.Employee.Id == employeeId)
+                    .Where(i => i.InvoiceDate >= startDate && i.InvoiceDate <= endDate)
+                    .Include(i => i.Customer)
+                    .Include(i => i.ServicesToProvide)
+                    .Include(i => i.Employee)
+                    .Include(i => i.VehicleToRepair)
+                    .ToList();
+            }
+        }
+
         public void Save(Invoice invoice)
         {
             using (var context = new AutomaxContext())

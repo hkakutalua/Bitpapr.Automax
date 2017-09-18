@@ -151,6 +151,7 @@
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Types\WindowResult.cs" />
     <Compile Include="Navigation\Types\WindowType.cs" />
+    <Compile Include="Reports\DataModel\FinancialReportData.cs" />
     <Compile Include="Reports\ParamsMappers\Base\IInvoiceToReportParamsMapper.cs" />
     <Compile Include="Reports\ParamsMappers\InvoiceToReportParamsMapper.cs" />
     <Compile Include="Security\SecureStringHelper.cs" />
@@ -270,6 +271,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Reports\FinancialReport.rdlc" />
     <Resource Include="Reports\InvoiceReport.rdlc" />
     <Resource Include="Fonts\Lato-Bold.ttf" />
     <Resource Include="Fonts\Lato-Light.ttf" />
