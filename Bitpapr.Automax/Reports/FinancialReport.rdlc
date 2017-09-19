@@ -57,16 +57,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.6355cm</Width>
+                  <Width>2.49118cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.52967cm</Width>
+                  <Width>4.05222cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.15925cm</Width>
+                  <Width>3.6818cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.85057cm</Width>
+                  <Width>3.37312cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -82,7 +82,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Número da Fatura</Value>
+                                  <Value>Fatura Nº</Value>
                                   <Style>
                                     <FontFamily>Segoe UI Semilight</FontFamily>
                                     <FontSize>12pt</FontSize>
@@ -439,8 +439,8 @@
             <DataSetName>Invoices</DataSetName>
             <Top>1.00224cm</Top>
             <Left>2.24578cm</Left>
-            <Height>1.95876cm</Height>
-            <Width>13.17499cm</Width>
+            <Height>1.95877cm</Height>
+            <Width>13.59832cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
